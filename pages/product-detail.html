@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Details - WATCH Premium Timepieces">
+    <title>Product Details | WATCH - Premium Timepieces</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../asset/css/index.css">
+    <link rel="stylesheet" href="../asset/css/pages/product-detail.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="../index.html">WATCH</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown__menu">
+                            <li><a href="#" class="dropdown__link">Luxury Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Smart Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Sports Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Vintage Watches</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn btn--icon" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn--icon" aria-label="Account">
+                    <i class="ri-user-add-line"></i>
+                </button>
+                <a href="cart.html" class="btn btn--icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="btn btn--menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="products.html">Shop</a>
+                    <span>/</span>
+                    <span id="breadcrumb-product">Product</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Detail -->
+        <section class="section product-detail-section">
+            <div class="container">
+                <div class="product-detail" id="product-detail">
+                    <!-- Product Gallery -->
+                    <div class="product-gallery">
+                        <div class="gallery-main">
+                            <img id="main-image" src="" alt="Product" class="gallery-main__image">
+                        </div>
+                        <div class="gallery-thumbnails" id="gallery-thumbnails">
+                            <!-- Thumbnails will be added dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h1 id="product-name" class="product-name"></h1>
+                            <button class="btn btn--icon wishlist-btn" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="product-rating" id="product-rating">
+                            <div class="stars"></div>
+                            <span class="reviews-count"></span>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="product-price">
+                            <span id="product-price" class="price"></span>
+                            <span id="product-discount" class="discount" style="display: none;"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="product-description">
+                            <h3>Description</h3>
+                            <p id="product-description"></p>
+                        </div>
+
+                        <!-- Specifications -->
+                        <div class="product-specs">
+                            <h3>Specifications</h3>
+                            <div class="specs-list" id="product-specs">
+                                <!-- Specs will be added dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Options -->
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="color-select">Color:</label>
+                                <select id="color-select" class="select-input">
+                                    <option value="">Select Color</option>
+                                    <option value="black">Black</option>
+                                    <option value="silver">Silver</option>
+                                    <option value="gold">Gold</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label for="quantity">Quantity:</label>
+                                <div class="quantity-selector">
+                                    <button id="decrease-qty" class="qty-btn">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" id="quantity" value="1" min="1" max="10" class="qty-input">
+                                    <button id="increase-qty" class="qty-btn">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="product-actions">
+                            <button class="btn btn--primary btn--large" id="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn btn--outline btn--large">
+                                <i class="fas fa-heart"></i> Add to Wishlist
+                            </button>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="product-info-box">
+                            <div class="info-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <strong>Free Shipping</strong>
+                                    <p>On orders over $100</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-undo"></i>
+                                <div>
+                                    <strong>30-Day Returns</strong>
+                                    <p>Hassle-free returns</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Secure Payment</strong>
+                                    <p>100% secure checkout</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="section reviews-section">
+            <div class="container">
+                <h2 class="section__title">Customer Reviews</h2>
+                <div class="reviews-container">
+                    <div class="reviews-summary">
+                        <div class="rating-summary">
+                            <div class="rating-number" id="avg-rating">4.5</div>
+                            <div class="rating-stars" id="avg-stars"></div>
+                            <p id="total-reviews">(128 reviews)</p>
+                        </div>
+                        <button class="btn btn--primary">Write a Review</button>
+                    </div>
+
+                    <div class="reviews-list" id="reviews-list">
+                        <!-- Reviews will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="section related-products">
+            <div class="container">
+                <h2 class="section__title">You Might Also Like</h2>
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">WATCH</h3>
+                    <p>Premium watches that combine timeless design with modern technology.</p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 WATCH. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../asset/Js/config.js" type="module"></script>
+    <script src="../asset/Js/components/header.js" type="module"></script>
+    <script src="../asset/Js/components/product.js" type="module"></script>
+</body>
+
+</html>
