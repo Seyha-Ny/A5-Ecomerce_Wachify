@@ -75,7 +75,7 @@ function initProductsPage() {
             .filter(f => f.checked)
             .map(f => parseFloat(f.value));
         if (selectedRatings.length > 0) {
-            filteredProducts = filteredProducts.filter(p => 
+            filteredProducts = filteredProducts.filter(p =>
                 selectedRatings.some(r => p.rating >= r)
             );
         }
@@ -346,8 +346,8 @@ function generateStarRating(rating) {
 
 function sortProducts(products, sortBy) {
     const sorted = [...products];
-    
-    switch(sortBy) {
+
+    switch (sortBy) {
         case 'price-low':
             return sorted.sort((a, b) => a.price - b.price);
         case 'price-high':

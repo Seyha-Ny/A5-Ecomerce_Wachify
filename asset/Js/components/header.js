@@ -40,7 +40,7 @@ function setActiveNavLink() {
     document.querySelectorAll('.nav__link').forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href && (currentPath.includes(href) || 
+        if (href && (currentPath.includes(href) ||
             (currentPath.includes('index') && href === 'index.html'))) {
             link.classList.add('active');
         }

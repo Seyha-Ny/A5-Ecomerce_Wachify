@@ -68,16 +68,12 @@ class CartManager {
 
     showNotification(message) {
         const notification = document.createElement('div');
-        notification.className = 'notification notification--success';
+        notification.className = 'notification notification--success show';
         notification.innerHTML = `
             <i class="fas fa-check-circle"></i>
             ${message}
         `;
         document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.classList.add('show');
-        }, 10);
 
         setTimeout(() => {
             notification.classList.remove('show');
@@ -87,42 +83,6 @@ class CartManager {
 
     init() {
         this.updateCartBadge();
-        this.setupEventListeners();
-    }
-
-    setupEventListeners() {
-        // Add to cart buttons
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.product-card__add-to-cart')) {
-                const productCard = e.target.closest('.product-card');
-                const productId = parseInt(productCard.dataset.id);
-                const product = this.getProductData(productId);
-                if (product) {
-                    this.addItem(product);
-                }
-            }
-
-            if (e.target.closest('#add-to-cart-btn')) {
-                const quantity = parseInt(document.getElementById('quantity')?.value || 1);
-                const productId = parseInt(new URLSearchParams(window.location.search).get('id'));
-                const product = this.getProductData(productId);
-                if (product) {
-                    this.addItem(product, quantity);
-                }
-            }
-        });
-    }
-
-    getProductData(productId) {
-        // This will be connected to your product data
-        // For now, return a basic structure
-        return {
-            id: productId,
-            name: 'Product Name',
-            price: 0,
-            image: '',
-            quantity: 1
-        };
     }
 }
 

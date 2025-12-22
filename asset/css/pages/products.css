@@ -1,7 +1,7 @@
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, rgba(26, 90, 141, 0.95) 0%, rgba(230, 57, 70, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1523170335684-f042b6e6f67b?w=1920&h=400&fit=crop');
+        url('https://images.unsplash.com/photo-1523170335684-f042b6e6f67b?w=1920&h=400&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

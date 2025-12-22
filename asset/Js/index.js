@@ -1,4 +1,5 @@
 import { getFeaturedProducts } from '../../data/products.js';
+import { cartManager } from './components/cart.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedProducts();
@@ -42,7 +43,7 @@ async function loadFeaturedProducts() {
 
         // Add event listeners to the add to cart buttons
         document.querySelectorAll('.product-card__add-to-cart').forEach(button => {
-            button.addEventListener('click', addToCartHandler);
+            button.addEventListener('click', (event) => addToCartHandler(event, products));
         });
 
     } catch (error) {
@@ -68,21 +69,14 @@ function generateStarRating(rating) {
     return stars;
 }
 
-function addToCartHandler(event) {
+function addToCartHandler(event, products) {
     const productCard = event.target.closest('.product-card');
     const productId = parseInt(productCard.dataset.id);
+    const product = products.find(p => p.id === productId);
 
-    // Add your cart logic here
-    console.log('Added to cart:', productId);
-
-    // Show success message
-    const notification = document.createElement('div');
-    notification.className = 'notification notification--success';
-    notification.textContent = 'Product added to cart!';
-    document.body.appendChild(notification);
-
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
+    if (product) {
+        cartManager.addItem(product);
+    } else {
+        console.warn('Product not found:', productId);
+    }
 }
