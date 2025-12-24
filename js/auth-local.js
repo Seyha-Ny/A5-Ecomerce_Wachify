@@ -3,11 +3,6 @@
 
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-// Add demo account if no users exist
-if (users.length === 0) {
-  users.push({ username: "admin", email: "admin@example.com", password: "123" });
-  localStorage.setItem('users', JSON.stringify(users));
-}
 
 // Sign Up
 document.getElementById('sign-up-form').addEventListener('submit', (e) => {
