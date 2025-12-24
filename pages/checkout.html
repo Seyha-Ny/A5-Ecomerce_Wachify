@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout - WATCH Premium Timepieces">
+    <title>Checkout | WATCH - Premium Timepieces</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../asset/css/index.css">
+    <link rel="stylesheet" href="../asset/css/pages/checkout.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="../index.html">WATCH</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown__menu">
+                            <li><a href="#" class="dropdown__link">Luxury Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Smart Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Sports Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Vintage Watches</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn btn--icon" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn--icon" aria-label="Account">
+                    <i class="ri-user-add-line"></i>
+                </button>
+                <a href="cart.html" class="btn btn--icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="btn btn--menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="cart.html">Cart</a>
+                    <span>/</span>
+                    <span>Checkout</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Section -->
+        <section class="section checkout-section">
+            <div class="container">
+                <!-- Progress Steps -->
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <span class="progress-number">1</span>
+                        <span class="progress-label">Shipping</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <span class="progress-number">2</span>
+                        <span class="progress-label">Payment</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <span class="progress-number">3</span>
+                        <span class="progress-label">Confirmation</span>
+                    </div>
+                </div>
+
+                <div class="checkout-wrapper">
+                    <!-- Checkout Form -->
+                    <div class="checkout-form">
+                        <!-- Shipping Information -->
+                        <div class="form-section" id="shipping-section">
+                            <h2 class="form-title">
+                                <span class="step-number">1</span> Shipping Address
+                            </h2>
+                            <form class="form" id="shipping-form">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Street Address</label>
+                                    <input type="text" id="address" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="apartment">Apartment, Suite, Etc. (Optional)</label>
+                                    <input type="text" id="apartment">
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zip">ZIP Code</label>
+                                        <input type="text" id="zip" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" required>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="same-billing" checked>
+                                    <label for="same-billing">Billing address same as shipping</label>
+                                </div>
+
+                                <button type="button" class="btn btn--primary btn--block" onclick="nextStep()">
+                                    Continue to Payment
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="form-section" id="payment-section" style="display: none;">
+                            <h2 class="form-title">
+                                <span class="step-number">2</span> Payment Method
+                            </h2>
+                            <form class="form" id="payment-form">
+                                <div class="payment-methods">
+                                    <label class="payment-method">
+                                        <input type="radio" name="payment" value="card" checked>
+                                        <span>Credit Card</span>
+                                    </label>
+                                    <label class="payment-method">
+                                        <input type="radio" name="payment" value="paypal">
+                                        <span>PayPal</span>
+                                    </label>
+                                    <label class="payment-method">
+                                        <input type="radio" name="payment" value="bank">
+                                        <span>Bank Transfer</span>
+                                    </label>
+                                </div>
+
+                                <div id="card-payment" class="payment-details">
+                                    <div class="form-group">
+                                        <label for="card-name">Cardholder Name</label>
+                                        <input type="text" id="card-name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="card-number">Card Number</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Expiry Date</label>
+                                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="button" class="btn btn--outline" onclick="previousStep()">
+                                        Back
+                                    </button>
+                                    <button type="button" class="btn btn--primary" onclick="submitOrder()">
+                                        Place Order
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Order Confirmation -->
+                        <div class="form-section" id="confirmation-section" style="display: none;">
+                            <div class="success-message">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h2>Order Confirmed!</h2>
+                                <p>Thank you for your purchase</p>
+                                <p class="order-number">Order #<span id="order-id"></span></p>
+
+                                <div class="confirmation-message">
+                                    <p>A confirmation email has been sent to <strong id="confirm-email"></strong></p>
+                                    <p>Your order will be shipped within 2-3 business days.</p>
+                                </div>
+
+                                <div class="confirmation-actions">
+                                    <a href="products.html" class="btn btn--primary">Continue Shopping</a>
+                                    <a href="../index.html" class="btn btn--outline">Back to Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <aside class="checkout-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items" id="summary-items">
+                            <!-- Items will be added dynamically -->
+                        </div>
+
+                        <div class="summary-totals">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="summary-subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping:</span>
+                                <span id="summary-shipping">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax:</span>
+                                <span id="summary-tax">$0.00</span>
+                            </div>
+                            <div class="summary-row summary-row--total">
+                                <span>Total:</span>
+                                <span id="summary-total">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="security-info">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Your payment information is secure and encrypted</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">WATCH</h3>
+                    <p>Premium watches that combine timeless design with modern technology.</p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 WATCH. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../asset/Js/config.js" type="module"></script>
+    <script src="../asset/Js/components/header.js" type="module"></script>
+    <script>
+        let currentStep = 1;
+
+        function nextStep() {
+            // Validate shipping form
+            const shippingForm = document.getElementById('shipping-form');
+            if (!shippingForm.checkValidity()) {
+                shippingForm.reportValidity();
+                return;
+            }
+
+            currentStep = 2;
+            updateCheckoutView();
+        }
+
+        function previousStep() {
+            currentStep = 1;
+            updateCheckoutView();
+        }
+
+        function submitOrder() {
+            const paymentForm = document.getElementById('payment-form');
+            if (!paymentForm.checkValidity()) {
+                paymentForm.reportValidity();
+                return;
+            }
+
+            currentStep = 3;
+            document.getElementById('order-id').textContent = Math.floor(Math.random() * 1000000);
+            const email = document.getElementById('email').value;
+            document.getElementById('confirm-email').textContent = email;
+            updateCheckoutView();
+        }
+
+        function updateCheckoutView() {
+            document.getElementById('shipping-section').style.display = currentStep === 1 ? 'block' : 'none';
+            document.getElementById('payment-section').style.display = currentStep === 2 ? 'block' : 'none';
+            document.getElementById('confirmation-section').style.display = currentStep === 3 ? 'block' : 'none';
+
+            // Update progress
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                step.classList.toggle('active', index + 1 <= currentStep);
+            });
+        }
+    </script>
+</body>
+
+</html>

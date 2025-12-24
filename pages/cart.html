@@ -4,29 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium watches and smartwatches collection">
-    <title>WATCH | Premium Timepieces</title>
+    <meta name="description" content="Shopping cart - WATCH Premium Timepieces">
+    <title>Shopping Cart | WATCH - Premium Timepieces</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="asset/css/index.css">
+    <link rel="stylesheet" href="../asset/css/index.css">
+    <link rel="stylesheet" href="../asset/css/pages/cart.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-<<<<<<< HEAD
-    <h1>Here is Develop branch, it is for all of us to push our code here.</h1>
-=======
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header__logo">
-                <a href="index.html">WATCH</a>
+                <a href="../index.html">WATCH</a>
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="pages/products.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Shop</a></li>
                     <li class="nav__item dropdown">
                         <a href="#" class="nav__link">Collections <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown__menu">
@@ -36,8 +34,8 @@
                             <li><a href="#" class="dropdown__link">Vintage Watches</a></li>
                         </ul>
                     </li>
-                    <li class="nav__item"><a href="pages/about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="pages/contact.html" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
             <div class="header__actions">
@@ -45,10 +43,9 @@
                     <i class="fas fa-search"></i>
                 </button>
                 <button class="btn btn--icon" aria-label="Account">
-                    <!-- <i class="far fa-user"></i> -->
                     <i class="ri-user-add-line"></i>
                 </button>
-                <a href="pages/cart.html" class="btn btn--icon cart-icon" aria-label="Cart">
+                <a href="cart.html" class="btn btn--icon cart-icon" aria-label="Cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
@@ -62,55 +59,82 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container" id="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">Timeless Elegance on Your Wrist</h1>
-                    <p class="hero__subtitle">Discover our exclusive collection of premium watches and smartwatches</p>
-                    <div class="call-to-action">
-                        <a href="pages/products.html" class="btn btn--primary">Shop Now</a>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>Cart</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section class="section cart-section">
+            <div class="container">
+                <!-- Empty Cart State -->
+                <div class="empty-cart" id="empty-cart">
+                    <div class="empty-cart__content">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h2>Your cart is empty</h2>
+                        <p>Looks like you haven't added any items to your cart yet.</p>
+                        <a href="products.html" class="btn btn--primary">Continue Shopping</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Featured Categories -->
-        <section class="section categories">
-            <div class="container">
-                <h2 class="section__title">Shop by Category</h2>
-                <div class="categories__grid">
-                    <a href="#" class="category-card">
-                        <div class="category-card__image">
-                            <img src="asset/image/products/p1.webp" alt="Luxury Watches">
+                <!-- Cart Content -->
+                <div class="cart-content" id="cart-content" style="display: none;">
+                    <div class="cart-items">
+                        <h2 class="cart-title">Cart Items</h2>
+                        <div class="cart-items__list" id="cart-items">
+                            <!-- Cart items will be loaded dynamically -->
                         </div>
-                        <h3 class="category-card__title">Luxury</h3>
-                    </a>
-                    <a href="#" class="category-card">
-                        <div class="category-card__image">
-                            <img src="asset/image/products/p2.webp" alt="Smart Watches">
+                    </div>
+
+                    <!-- Cart Summary -->
+                    <aside class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
                         </div>
-                        <h3 class="category-card__title">Smart Watches</h3>
-                    </a>
-                    <a href="#" class="category-card">
-                        <div class="category-card__image">
-                            <img src="asset/image/products/p3.webp" alt="Sports Watches">
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
                         </div>
-                        <h3 class="category-card__title">Sports</h3>
-                    </a>
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row summary-row--total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <div class="promo-code">
+                            <input type="text" id="promo-input" placeholder="Enter promo code"
+                                class="promo-code__input">
+                            <button class="btn btn--primary btn--block" id="apply-promo">Apply</button>
+                        </div>
+
+                        <button class="btn btn--primary btn--block btn--large" id="checkout-btn">
+                            Proceed to Checkout
+                        </button>
+
+                        <a href="products.html" class="btn btn--text btn--block">Continue Shopping</a>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Products -->
-        <section class="section featured">
+        <!-- Related Products -->
+        <section class="section related-products-section">
             <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Featured Products</h2>
-                    <a href="pages/products.html" class="btn btn--text">View All</a>
-                </div>
-                <div class="products-grid" id="featured-products">
-                    <!-- Products will be loaded dynamically via JavaScript -->
+                <h2 class="section__title">You Might Also Like</h2>
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded dynamically -->
                 </div>
             </div>
         </section>
@@ -127,8 +151,8 @@
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Quick Links</h4>
                     <ul class="footer__links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/products.html">Shop</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -163,16 +187,10 @@
         </div>
     </footer>
 
-    <!-- Main JavaScript -->
-    <script src="asset/Js/components/header.js" type="module"></script>
-    <script src="asset/Js/index.js" type="module"></script>
-
-    <!-- Add any additional scripts here -->
-    <script>
-        // Add any inline JavaScript here if needed
-        
-    </script>
->>>>>>> phoun
+    <!-- JavaScript -->
+    <script src="../asset/Js/config.js" type="module"></script>
+    <script src="../asset/Js/components/header.js" type="module"></script>
+    <script src="../asset/Js/components/cart.js" type="module"></script>
 </body>
 
 </html>
