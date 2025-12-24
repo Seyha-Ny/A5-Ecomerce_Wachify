@@ -1,4 +1,3 @@
-// js/panel-animation.js
 // Responsible only for switching between Sign In and Sign Up panels
 
 const signUpBtn = document.getElementById("sign-up-btn");

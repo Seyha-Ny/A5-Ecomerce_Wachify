@@ -1,5 +1,3 @@
-// js/dashboard-auth.js
-// Protects dashboard and shows user info
 
 const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
