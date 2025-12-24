@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact WATCH - Get in Touch with Our Team">
+    <title>Contact Us | WATCH - Premium Timepieces</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../asset/css/index.css">
+    <link rel="stylesheet" href="../asset/css/pages/contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="../index.html">WATCH</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="products.html" class="nav__link">Shop</a></li>
+                    <li class="nav__item dropdown">
+                        <a href="#" class="nav__link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown__menu">
+                            <li><a href="#" class="dropdown__link">Luxury Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Smart Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Sports Watches</a></li>
+                            <li><a href="#" class="dropdown__link">Vintage Watches</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="btn btn--icon" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn--icon" aria-label="Account">
+                    <i class="ri-user-add-line"></i>
+                </button>
+                <a href="cart.html" class="btn btn--icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="btn btn--menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you. Get in touch with our team</p>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>Contact</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Cards -->
+        <section class="section contact-info-section">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>123 Watch Street<br>New York, NY 10001<br>United States</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>Main: +1 (555) 123-4567<br>Support: +1 (555) 234-5678<br>Available: Mon-Fri, 9AM-6PM EST</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Info: info@watchstore.com<br>Support: support@watchstore.com<br>Sales: sales@watchstore.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="section contact-form-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Customer Support</option>
+                                    <option value="sales">Sales Question</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the privacy policy and terms of service</label>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Side Information -->
+                    <div class="contact-side">
+                        <div class="response-time">
+                            <h3>Response Time</h3>
+                            <p>We typically respond to all inquiries within <strong>24 hours</strong> during business
+                                days.</p>
+                        </div>
+                        <div class="support-hours">
+                            <h3>Support Hours</h3>
+                            <ul>
+                                <li><span>Monday - Friday:</span> 9:00 AM - 6:00 PM EST</li>
+                                <li><span>Saturday:</span> 10:00 AM - 4:00 PM EST</li>
+                                <li><span>Sunday:</span> Closed</li>
+                            </ul>
+                        </div>
+                        <div class="faq-link">
+                            <h3>Frequently Asked Questions</h3>
+                            <p>Check our FAQ section for quick answers to common questions.</p>
+                            <a href="#" class="btn btn--outline">View FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <div class="container">
+                <h2 class="section__title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How long does shipping take?</h3>
+                        <p>Standard shipping typically takes 5-7 business days. Express shipping is available for 2-3
+                            business days. All orders ship with tracking information.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is your return policy?</h3>
+                        <p>We offer a 30-day money-back guarantee on all purchases. Items must be in original condition
+                            with all packaging and documentation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer international shipping?</h3>
+                        <p>Yes, we ship to over 50 countries worldwide. International shipping rates and delivery times
+                            vary by location.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I track my order?</h3>
+                        <p>You'll receive a tracking number via email as soon as your order ships. You can use this
+                            number to track your package in real-time.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept all major credit cards, PayPal, Apple Pay, Google Pay, and digital wallets. All
+                            payments are processed securely.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you offer warranty on watches?</h3>
+                        <p>Yes, all watches come with a 2-year manufacturer's warranty covering defects in materials and
+                            workmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section map-section">
+            <div class="container">
+                <h2>Find Us Here</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890123"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get exclusive offers, new product launches, and watch care tips delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">WATCH</h3>
+                    <p>Premium watches that combine timeless design with modern technology.</p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 WATCH. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../asset/Js/config.js" type="module"></script>
+    <script src="../asset/Js/components/header.js" type="module"></script>
+    <script type="module">
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.className = 'notification notification--success show';
+            notification.innerHTML = `
+                <div class="notification__content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Thank you for your message! We'll get back to you soon.</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+
+            // Reset form
+            contactForm.reset();
+
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+
+            console.log('Form data:', formData);
+        });
+    </script>
+</body>
+
+</html>
