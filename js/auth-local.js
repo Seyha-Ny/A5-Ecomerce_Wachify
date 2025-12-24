@@ -1,13 +1,9 @@
-// js/auth-local.js
-// This file handles everything for login and sign up using localStorage
-// No Firebase - everything stays in your browser
 
+// This file handles everything for login and sign up using localStorage
 //Get all users from localStorage (or start with empty list)
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-// ========================================
 // SIGN UP - Create new account
-// ========================================
 document.getElementById('sign-up-form').addEventListener('submit', (e) => {
   e.preventDefault(); // Stop page from refreshing
 
@@ -56,10 +52,7 @@ document.getElementById('sign-up-form').addEventListener('submit', (e) => {
   // Switch back to Sign In panel automatically
   document.querySelector(".container").classList.remove("sign-up-mode");
 });
-
-// ========================================
 // SIGN IN - Log in to account
-// ========================================
 document.getElementById('sign-in-form').addEventListener('submit', (e) => {
   e.preventDefault(); // Stop page from refreshing
 
