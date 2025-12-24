@@ -22,3 +22,7 @@ filters.forEach(filter => {
     });
 });
 
+const card_fill = document.getElementsByClassName("btn btn-outline-primary");
+const btnCardAdd = document.getElementsByClassName("cart-btn");
+card_fill.forEach()
+ 
