@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATCH - Sign In / Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left Side - Branding -->
+        <div class="brand-section">
+            <div class="brand-content">
+                <div class="brand-logo">
+                    <i class="fas fa-watch"></i>
+                </div>
+                <h1>WATCH</h1>
+                <p>Premium Timepieces & Smart Watches</p>
+                <div class="brand-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Authentic Premium Watches</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fast & Free Shipping</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Lifetime Warranty</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Auth Forms -->
+        <div class="auth-section">
+            <!-- Login Form -->
+            <div class="form-container login-form" id="loginForm">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+
+                <form id="loginFormElement" class="form-content">
+                    <div class="form-group">
+                        <label for="loginEmail">Email or Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" id="loginEmail" placeholder="Enter your email or username" required>
+                        </div>
+                        <span class="error-text" id="loginEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label for="loginPassword">Password</label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" id="toggleLoginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-text" id="loginPasswordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me for 30 days</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" title="Sign in with Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn facebook" title="Sign in with Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn apple" title="Sign in with Apple">
+                            <i class="fab fa-apple"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        Don't have an account? <a href="#" class="toggle-form-link" id="showRegister">Create one</a>
+                    </div>
+                </form>
+
+                <div id="loginMessage" class="message-box"></div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form-container register-form" id="registerForm" style="display: none;">
+                <div class="form-header">
+                    <h2>Create Account</h2>
+                    <p>Join our premium watch community</p>
+                </div>
+
+                <form id="registerFormElement" class="form-content">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="registerFirstName">First Name</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="registerFirstName" placeholder="First name" required>
+                            </div>
+                            <span class="error-text" id="firstNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerLastName">Last Name</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="registerLastName" placeholder="Last name" required>
+                            </div>
+                            <span class="error-text" id="lastNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="registerEmail" placeholder="your@email.com" required>
+                        </div>
+                        <span class="error-text" id="registerEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-at"></i>
+                            <input type="text" id="registerUsername" placeholder="Choose a username" required>
+                        </div>
+                        <span class="error-text" id="registerUsernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="registerPassword" placeholder="Create a strong password"
+                                required>
+                            <button type="button" class="toggle-password" id="toggleRegisterPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength"></div>
+                        <span class="error-text" id="registerPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="registerConfirmPassword" placeholder="Confirm your password"
+                                required>
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-text" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                                Policy</a></label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Create Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="form-footer">
+                        Already have an account? <a href="#" class="toggle-form-link" id="showLogin">Sign in</a>
+                    </div>
+                </form>
+
+                <div id="registerMessage" class="message-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
