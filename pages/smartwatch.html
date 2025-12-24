@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WATCH - Premium Smartwatches Store">
+    <title>WATCH - Smartwatches</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/products.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../dashboard.html">
+                <i class="bi bi-watch"></i>
+                WATCH
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="smartphone.html"><i class="bi bi-phone"></i>
+                                    Smart
+                                    Phone</a></li>
+                            <li><a class="dropdown-item" href="smartwatch.html"><i class="bi bi-smartwatch"></i>
+                                    Smart Watch</a></li>
+                            <li><a class="dropdown-item" href="laptop.html"><i class="bi bi-laptop"></i>
+                                    Laptop</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2 ms-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search smartwatches..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="../login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Smartwatches -->
+    <div id="smartwatchHero" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&h=500&fit=crop"
+                    class="d-block w-100" alt="Premium Smartwatches">
+                <div class="carousel-caption">
+                    <h5>Premium Smartwatches</h5>
+                    <p>Stay connected with the latest smartwatch technology</p>
+                    <a href="#smartwatches" class="btn btn-cta">Shop Smartwatches</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smartwatches Section -->
+    <section class="products-section section" id="smartwatches">
+        <div class="container">
+            <h2 class="section-title">Smartwatches Collection</h2>
+
+            <div class="row g-4">
+                <!-- Smartwatch Products -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop"
+                                alt="Apple Watch">
+                            <span class="product-badge">New</span>
+                        </div>
+                        <div class="product-body">
+                            <h6 class="product-title">Apple Watch Ultra</h6>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i> 4.9 (312 reviews)
+                            </div>
+                            <div class="product-price">$799.99</div>
+                            <button class="btn btn-add-cart w-100">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&h=300&fit=crop"
+                                alt="Samsung Galaxy Watch">
+                            <span class="product-badge">Sale</span>
+                        </div>
+                        <div class="product-body">
+                            <h6 class="product-title">Samsung Galaxy Watch 6</h6>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i> 4.7 (245 reviews)
+                            </div>
+                            <div class="product-price">$349.99</div>
+                            <button class="btn btn-add-cart w-100">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&h=300&fit=crop"
+                                alt="Garmin Fenix">
+                            <span class="product-badge">Premium</span>
+                        </div>
+                        <div class="product-body">
+                            <h6 class="product-title">Garmin Fenix 7</h6>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i> 4.8 (189 reviews)
+                            </div>
+                            <div class="product-price">$699.99</div>
+                            <button class="btn btn-add-cart w-100">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">WATCH</h5>
+                    <p>Premium watches for every occasion. Quality, style, and precision in every timepiece.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="products.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Track Order</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Newsletter</h5>
+                    <p>Subscribe for exclusive offers and new arrivals</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control form-control-sm" placeholder="Your email">
+                        <button class="btn btn-outline-success btn-sm ms-2" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="mb-3">
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <p>&copy; 2025 WATCH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard-auth.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

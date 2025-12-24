@@ -61,3 +61,5 @@
 
         // Listen for storage changes (logout in other tabs)
         window.addEventListener('storage', checkUserSession);
+
+        console.log('Dashboard auth script loaded successfully');
