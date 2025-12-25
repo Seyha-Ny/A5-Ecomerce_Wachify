@@ -98,6 +98,7 @@
 .product-choose1:hover {
     background-color: gray;
 }
+
 .product-choose1.active {
     background: #333;
     color: #fff;
@@ -196,4 +197,72 @@
 
 .cart-btn:hover {
     background: #005fd1;
+}
+
+.lod-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.load {
+    background-color: #ffa200;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.load:hover {
+    background-color: #888;
+}
+
+/* footer */
+
+.footer {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 3rem 0 1rem;
+    margin-top: 5rem;
+}
+
+.footer-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #999;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
 }
