@@ -71,21 +71,21 @@ updateCartCount();
 // Wait until the page is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Get the Load More button
+    //  Get the Load More button
     const loadButton = document.querySelector(".load");
 
-    // 2. Get ALL product cards
+    //  Get ALL product cards
     const products = document.querySelectorAll(".menu-product .card");
 
-    // 3. When user clicks the button
+    //  When user clicks the button
     loadButton.addEventListener("click", function () {
 
-        // 4. Show every product
+        // Show every product
         products.forEach(function (product) {
             product.style.display = "block";
         });
 
-        // 5. Hide the Load More button after click (optional)
+        //  Hide the Load More button after click (optional)
         loadButton.style.display = "block";
     });
 
