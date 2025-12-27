@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Select the form
     const buyForm = document.querySelector(".buy-product-form");
 
-    buyForm.addEventListener("submit", function(e) {
+    buyForm.addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent default form submission
 
         // You can access input values if needed
@@ -132,5 +132,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Optional: clear form fields after submission
         buyForm.reset();
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.querySelector("form.d-flex");
+    const searchInput = searchForm.querySelector("input[type='search']");
+    const productCards = document.querySelectorAll(".menu-product .card");
+
+    searchForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent page reload
+
+        const searchValue = searchInput.value.toLowerCase().trim();
+
+        productCards.forEach(card => {
+            const productName = card.querySelector(".title").innerText.toLowerCase();
+
+            if (productName.includes(searchValue)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
     });
 });
