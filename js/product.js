@@ -90,3 +90,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the form
+    const buyForm = document.querySelector(".buy-product-form");
+
+    buyForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // You can access input values if needed
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const productName = document.getElementById("productName").value;
+        const model = document.getElementById("model").value;
+        const location = document.getElementById("location").value;
+
+        // Optionally, you can validate fields here if needed
+
+        // Show success message to the user
+        const messageBox = document.createElement("div");
+        messageBox.textContent = `Thank you ${firstName}! Your order for ${productName} (${model}) has been received.`;
+        messageBox.style.background = "#d4edda";
+        messageBox.style.color = "#155724";
+        messageBox.style.padding = "15px";
+        messageBox.style.borderRadius = "8px";
+        messageBox.style.marginTop = "20px";
+        messageBox.style.textAlign = "center";
+        messageBox.style.fontWeight = "500";
+
+        // Remove previous messages if exist
+        const existingMessage = document.querySelector(".buy-product-form + div");
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        // Append message after the form
+        buyForm.parentNode.appendChild(messageBox);
+
+        // Optional: clear form fields after submission
+        buyForm.reset();
+    });
+});
