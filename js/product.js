@@ -32,7 +32,7 @@ function updateCartCount() {
     cartCount.textContent = total;
 }
 
-// Add to cart
+// Add to cart on navbar
 document.querySelectorAll(".cart-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const product = {
@@ -65,6 +65,8 @@ document.querySelectorAll(".cart-btn").forEach(btn => {
     });
 });
 
+// Load page to page product
+
 // Load cart count on page load
 updateCartCount();
 
@@ -91,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// Submit form order product
 
 document.addEventListener("DOMContentLoaded", function () {
     // Select the form
@@ -134,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
         buyForm.reset();
     });
 });
+
+//Search product
 
 document.addEventListener("DOMContentLoaded", function () {
     const searchForm = document.querySelector("form.d-flex");
