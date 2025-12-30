@@ -462,7 +462,7 @@
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-fill"></i>
-                            <span id="accountName" class="ms-2">Account</span>
+                            <span id="accountName" class="ms-2">{{user.username}}</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
                             <li><a class="dropdown-item" href="registeration/index.html" id="loginBtn"><i
@@ -746,9 +746,20 @@
 
     <!-- Account Management Script -->
     <script>
+        // Simple templating system to replace {{user.username}} with actual data
+        function renderTemplate() {
+            const currentUser = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+            const user = currentUser ? JSON.parse(currentUser) : null;
+
+            // Replace all template variables in the document
+            const html = document.documentElement.innerHTML;
+            const renderedHtml = html.replace(/\{\{user\.username\}\}/g, user ? user.username : 'Account');
+            document.documentElement.innerHTML = renderedHtml;
+        }
+
         // Check if user is logged in on page load
         function checkUserSession() {
-            const currentUser = sessionStorage.getItem('currentUser');
+            const currentUser = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
             const accountNameSpan = document.getElementById('accountName');
             const loginBtn = document.getElementById('loginBtn');
             const logoutBtn = document.getElementById('logoutBtn');
@@ -756,28 +767,36 @@
 
             if (currentUser) {
                 const user = JSON.parse(currentUser);
-                accountNameSpan.textContent = user.name;
-                loginBtn.style.display = 'none';
-                logoutBtn.style.display = 'block';
-                divider.style.display = 'block';
+                if (accountNameSpan) {
+                    accountNameSpan.textContent = user.username;
+                }
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (logoutBtn) logoutBtn.style.display = 'block';
+                if (divider) divider.style.display = 'block';
             } else {
-                accountNameSpan.textContent = 'Account';
-                loginBtn.style.display = 'block';
-                logoutBtn.style.display = 'none';
-                divider.style.display = 'none';
+                if (accountNameSpan) {
+                    accountNameSpan.textContent = 'Account';
+                }
+                if (loginBtn) loginBtn.style.display = 'block';
+                if (logoutBtn) logoutBtn.style.display = 'none';
+                if (divider) divider.style.display = 'none';
             }
         }
 
         // Handle logout
-        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+        document.getElementById('logoutBtn')?.addEventListener('click', (e) => {
             e.preventDefault();
             sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('currentUser');
             localStorage.removeItem('rememberedUser');
             window.location.href = 'registeration/index.html';
         });
 
-        // Check session on page load
-        checkUserSession();
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTemplate();
+            checkUserSession();
+        });
 
         // Listen for storage changes (logout in other tabs)
         window.addEventListener('storage', checkUserSession);
