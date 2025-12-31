@@ -25,12 +25,12 @@ document.getElementById('sign-up-form').addEventListener('submit', (e) => {
     return; // Stop here
   }
 
-  //  Password must be MORE than 8 characters
-  if (password.length <= 8) {
+  // Password must be 8 or MORE characters
+  if (password.length < 8) {
     // Make password box red
     passwordContainer.classList.add('error');
     // Show alert message
-    alert("Your password must be more than 8 characters!");
+    alert("Your password must be at least 8 characters long!");
     // Put cursor back in password field
     passwordBox.focus();
     return; // Stop here

@@ -11,16 +11,16 @@
     box-sizing: border-box;
 }
 
-.product {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    height: 415vh;
     background: white;
 }
 
+/* Navigation Styles */
 .navbar {
-    background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%) !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
 }
@@ -64,88 +64,163 @@
     color: var(--dark-color);
 }
 
-.about-page {
-    height: 100vh;
-}
-
-.title-about {
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    gap: 40px;
     align-items: center;
 }
 
-.about-info {
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-stats {
+    animation: fadeInLeft 0.8s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-image {
+    animation: fadeInRight 0.8s ease-out 0.3s both;
+}
+
+.hero-image img {
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Mission Section */
+.mission-section {
+    background: white;
+}
+
+.mission-card,
+.vision-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon,
+.vision-icon {
+    width: 60px;
+    height: 60px;
     display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    margin-left: 50px;
-
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
 }
 
-.about-info h3 {
-    color: rgb(190, 19, 19);
-    font-size: 22px;
+/* Values Section */
+.values-section {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
 }
 
-.about-info h5 {
-    font-size: 34px;
+.value-card {
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.about-info p {
-    width: 480px;
+.value-card:hover {
+    transform: translateY(-10px);
 }
 
-.about-btn button{
-    background-color: #ff8c00;
-    width: 100px;
-    height: 40px;
-    border: none;
+.value-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
+    margin: 0 auto 1rem;
+}
+
+/* Team Section */
+.team-section {
+    background: #f8f9fa;
+}
+
+.team-card {
+    transition: transform 0.3s ease;
+    padding: 2rem;
+    background: white;
     border-radius: 15px;
-    text-align: center;
-}
-.about-btn button:hover{
-    background: #333;
-    color: white;
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.about-img {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 100px;
-    margin-right: 50px;
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.img1 img {
-    width: 300px;
-    border-radius: 10px;
+.team-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
 }
 
-.img2 img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-
+.team-card:hover .team-image img {
+    transform: scale(1.05);
 }
 
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
+.social-links a:hover {
+    transform: scale(1.2);
+    color: var(--secondary-color) !important;
+}
 
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
 
+.cta-section h2 {
+    animation: fadeInDown 0.8s ease-out;
+}
 
+.cta-section p {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
 
-
-
+.cta-buttons {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
 
 /* Footer */
 .footer {
     background: var(--dark-color);
     color: #fff;
     padding: 3rem 0 1rem;
-    margin-top: 5rem;
+    margin-top: 0;
 }
 
 .footer-title {
@@ -186,4 +261,148 @@
 
 .social-icons a:hover {
     transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .value-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .value-card {
+        margin-bottom: 1rem;
+    }
+
+    .team-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+
+    .hero-image img:hover,
+    .team-image img:hover,
+    .mission-card:hover,
+    .vision-card:hover,
+    .value-card:hover,
+    .team-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+    .mission-card,
+    .vision-card,
+    .team-card {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

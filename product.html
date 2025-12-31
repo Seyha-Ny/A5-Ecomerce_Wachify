@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Shop Premium Electronics - WeShop</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,543 +13,763 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/product.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./css/feedback.css">
+    <style>
+        /* Additional Modern Styles */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .floating-cards {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1rem;
+            color: white;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-card:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .advanced-filters {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-section h5 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .price-range {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .price-range input {
+            flex: 1;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .product-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .quick-actions {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .quick-actions {
+            opacity: 1;
+        }
+
+        .quick-action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-action-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary-color);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .product-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: var(--primary-color);
+        }
+
+        .rating-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--dark-color);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .wishlist-btn:hover {
+            border-color: var(--danger-color);
+            color: var(--danger-color);
+        }
+
+        .wishlist-btn.active {
+            background: var(--danger-color);
+            border-color: var(--danger-color);
+            color: white;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .view-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e9ecef;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn.active {
+            background: var(--primary-color);
+            color: var(--dark-color);
+            border-color: var(--primary-color);
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="product">
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand text-dark" href="dashboard.html">
-                    <i class="bi bi-bing"></i>
-                    WESHOP
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link  text-dark" href="dashboard.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark active" href="products.html">Shop</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="collectionsDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Collections
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
-                                <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-phone"></i>
-                                        Smart
-                                        Phone</a></li>
-                                <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-smartwatch"></i>
-                                        Smart Watch</a></li>
-                                <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-laptop"></i>
-                                        Laptop</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="pages/contact.html">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex gap-2 ms-3">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search watches..."
-                                aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </form>
-                        <div class="dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-fill"></i>
-                                <span id="accountName" class="ms-2">Account</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-                                <li><a class="dropdown-item" href="login.html" id="loginBtn"><i
-                                            class="bi bi-box-arrow-in-right"></i> Login</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" id="divider" style="display:none;">
-                                </li>
-                                <li><button class="dropdown-item" id="logoutBtn"
-                                        style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
-                                            class="bi bi-box-arrow-right"></i> Logout</button></li>
-                            </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-dark" href="dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" href="product.html">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="collectionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="collections/phones.html"><i class="bi bi-phone"></i>
+                                    Smart Phone</a></li>
+                            <li><a class="dropdown-item" href="collections/watches.html"><i
+                                        class="bi bi-smartwatch"></i>
+                                    Smart Watch</a></li>
+                            <li><a class="dropdown-item" href="collections/laptops.html"><i class="bi bi-laptop"></i>
+                                    Laptop</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2 ms-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search products..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="position: relative; min-height: 60vh; display: flex; align-items: center;">
+        <div class="hero-overlay"></div>
+        <div class="floating-cards">
+            <!-- <div class="floating-card">
+                <i class="fas fa-shipping-fast me-2"></i>
+                <span>Free Shipping</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-shield-alt me-2"></i>
+                <span>2 Year Warranty</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-award me-2"></i>
+                <span>Premium Quality</span>
+            </div> -->
+        </div>
+        <div class="container text-center" style="position: relative; z-index: 3;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4 text-white">Premium Electronics Collection</h1>
+                    <p class="lead mb-4 text-white">Discover cutting-edge technology with our curated selection of
+                        smartphones, laptops, and smartwatches</p>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span class="text-white">Authentic Products</span>
                         </div>
-                        <button class="btn btn-outline-primary">
-                            <i class="bi bi-cart-fill"></i>
-                            <span class="badge bg-danger" ​ id="cartCount">0</span>
+                        <div class="trust-badge">
+                            <i class="fas fa-truck text-warning"></i>
+                            <span class="text-white">Fast Delivery</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-headset text-warning"></i>
+                            <span class="text-white">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./img/shop1.webp" alt="Hero Background"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    </section>
+
+    <!-- Advanced Filters Section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="advanced-filters">
+                    <h4 class="mb-4">Filters</h4>
+
+                    <div class="filter-section">
+                        <h5>Price Range</h5>
+                        <div class="price-range">
+                            <input type="number" class="form-control" placeholder="Min" id="minPrice">
+                            <span>-</span>
+                            <input type="number" class="form-control" placeholder="Max" id="maxPrice">
+                        </div>
+                        <input type="range" class="form-range mt-2" min="0" max="2000" id="priceSlider">
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Categories</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catPhone" checked>
+                            <label class="form-check-label" for="catPhone">
+                                Smart Phones (5)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catLaptop" checked>
+                            <label class="form-check-label" for="catLaptop">
+                                Laptops (5)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catWatch" checked>
+                            <label class="form-check-label" for="catWatch">
+                                Smart Watches (5)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Brand</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandApple">
+                            <label class="form-check-label" for="brandApple">
+                                Apple
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandSamsung">
+                            <label class="form-check-label" for="brandSamsung">
+                                Samsung
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandGoogle">
+                            <label class="form-check-label" for="brandGoogle">
+                                Google
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Rating</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="rating4">
+                            <label class="form-check-label" for="rating4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                & Up
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="rating3">
+                            <label class="form-check-label" for="rating3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                & Up
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">Clear All Filters</button>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <!-- View Toggle and Sort -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('grid')">
+                            <i class="fas fa-th"></i> Grid
+                        </button>
+                        <button class="view-btn" onclick="setView('list')">
+                            <i class="fas fa-list"></i> List
                         </button>
                     </div>
-                </div>
-            </div>
-        </nav>
-        <div class="header-shop">
-            <div class="image-shop">
-                <img src="./img/shop1.webp" alt="">
-            </div>
-            <div class="title-shop">
-                <h3>Shop Here</h3>
-                <p>Here is Our product</p>
-            </div>
-        </div>
-        <div class="product-choose">
-            <div class="product-choose1" data-filter="all">
-                <div class="title-info1">
-                    <i class='fas fa-store' style='font-size:24px'></i>
-                    <div class="info-count">
-                        <h6>All Products</h6>
-                        <p>10 items</p>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="text-muted">Showing <span id="productCount">15</span> products</span>
+                        <select class="form-select" style="width: auto;">
+                            <option>Sort by: Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest First</option>
+                            <option>Best Rated</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-            <div class="product-choose1" data-filter="phone">
-                <div class="title-info1">
-                    <i class='fas fa-mobile' style='font-size:24px'></i>
-                    <div class="info-count">
-                        <h6>Smart Phone</h6>
-                        <p>10 items</p>
+
+                <!-- Product Grid -->
+                <div class="product-grid" id="productGrid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card" data-category="phone" data-price="599">
+                        <div class="product-badge">New</div>
+                        <div class="product-image">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="quickView('pixel01')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="quick-action-btn" onclick="compareProduct('pixel01')">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                            <img src="/img/menu9.png" alt="Google Pixel">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Google Pixel 8 Pro</h3>
+                            <p class="product-subtitle">Latest flagship with AI camera</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(234)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$599</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('pixel01', 'Google Pixel 8 Pro', 599, '/img/menu9.png')">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card" data-category="watch" data-price="899">
+                        <div class="product-badge">Bestseller</div>
+                        <div class="product-image">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="quickView('blackwatch01')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="quick-action-btn" onclick="compareProduct('blackwatch01')">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                            <img src="/img/menu1.png" alt="Black Watch">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Premium Black Watch</h3>
+                            <p class="product-subtitle">Classic elegance meets modern tech</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(512)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$899</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('blackwatch01', 'Premium Black Watch', 899, '/img/menu1.png')">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card" data-category="computer" data-price="1199">
+                        <div class="product-badge">Gaming</div>
+                        <div class="product-image">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="quickView('strixg16')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="quick-action-btn" onclick="compareProduct('strixg16')">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                            <img src="/img/menu3.png" alt="Gaming Laptop">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">ROG Strix G16</h3>
+                            <p class="product-subtitle">Ultimate gaming machine</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(189)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$1,199</span>
+                                <span class="original-price">$1,499</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('strixg16', 'ROG Strix G16', 1199, '/img/menu3.png')">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more product cards as needed -->
+                    <div class="product-card" data-category="phone" data-price="699">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-image">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="quickView('iphone17')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="quick-action-btn" onclick="compareProduct('iphone17')">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                            <img src="/img/menu5.png" alt="iPhone">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">iPhone 17 Pro Max</h3>
+                            <p class="product-subtitle">Apple's latest innovation</p>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(1,234)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$699</span>
+                                <span class="original-price">$999</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('iphone17', 'iPhone 17 Pro Max', 699, '/img/menu5.png')">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="product-choose1" data-filter="computer">
-                <div class="title-info1">
-                    <i class='fas fa-laptop' style='font-size:24px'></i>
-                    <div class="info-count">
-                        <h6>Computer</h6>
-                        <p>10 items</p>
-                    </div>
-                </div>
-            </div>
-            <div class="product-choose1" data-filter="watch">
-                <div class="title-info1">
-                    <i class="material-icons" style="font-size:26px">watch</i>
-                    <div class="info-count">
-                        <h6>Watches</h6>
-                        <p>10 items</p>
-                    </div>
+
+                <!-- Load More -->
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline-primary btn-lg" onclick="loadMoreProducts()">
+                        <i class="fas fa-plus me-2"></i>Load More Products
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="menu-product">
-            <div class="card" data-category="phone">
-                <div class="image-wrapper">
-                    <img src="/img/menu9.png" alt="Black Watch">
-                </div>
+    </section>
 
-                <h2 class="title">Google Pixel</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$599</div>
-
-                <button class="cart-btn" ​​​​data-id="pixel01" data-name="Google Pixel" data-price="599"
-                    data-image="/img/menu9.png">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="watch">
-                <div class="image-wrapper">
-                    <img src="/img/menu1.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Black Watch</h2>
-                <p class="subtitle">Classic</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$899</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="watch">
-                <div class="image-wrapper">
-                    <img src="/img/menu2.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Green Watch</h2>
-                <p class="subtitle">Classic</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$999</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="computer">
-                <div class="image-wrapper">
-                    <img src="/img/menu3.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Gog Strix G16</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$1199</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="computer">
-                <div class="image-wrapper">
-                    <img src="/img/menu4.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Lenovo Legion</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$999</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="phone">
-                <div class="image-wrapper">
-                    <img src="/img/menu5.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">IPhone 17 Pro Max</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$699</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="computer">
-                <div class="image-wrapper">
-                    <img src="/img/menu11.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Dell G15 Gaming</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$999</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="watch">
-                <div class="image-wrapper">
-                    <img src="/img/menu10.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Rolex</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$799</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="phone">
-                <div class="image-wrapper">
-                    <img src="/img/menu12.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Samsung</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$699</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="phone">
-                <div class="image-wrapper">
-                    <img src="/img/menu13.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Oppo A3</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$499</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="phone">
-                <div class="image-wrapper">
-                    <img src="/img/menu14.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">IPhone 15 Pro Max</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$399</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="computer">
-                <div class="image-wrapper">
-                    <img src="/img/menu15.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">HP Pavilion 15</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$699</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="computer">
-                <div class="image-wrapper">
-                    <img src="/img/menu16.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">ASUS TUF 2020</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$899</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="watch">
-                <div class="image-wrapper">
-                    <img src="/img/menu17.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">Galaxy Watch 5 Pro</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$999</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-            <div class="card" data-category="watch">
-                <div class="image-wrapper">
-                    <img src="/img/menu18.png" alt="Black Watch">
-                </div>
-
-                <h2 class="title">GTS7 Pro</h2>
-                <p class="subtitle">Modern</p>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-
-                <div class="price">$1199</div>
-
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div class="lod-more">
-            <button class="load">Load More</button>
-        </div>
-        <div class="buy-form">
-            <h3>Buy Our Product Now</h3>
-            <p>Here is the way that you can buy our product by complete this form.</p>
-
-        </div>
-        <div class="buy-form-container">
-            <h3>Order Now</h3>
-            <p>Please complete this form to buy our product.</p>
-            <form class="buy-product-form">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                </div>
-                <div class="form-group">
-                    <label for="productName">Product Name</label>
-                    <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
-                </div>
-                <div class="form-group">
-                    <label for="model">Model</label>
-                    <input type="text" id="model" name="model" placeholder="Enter product model" required>
-                </div>
-                <div class="form-group full-width">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location" placeholder="Enter your location" required>
-                </div>
-                <div class="form-group full-width">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4 mb-4">
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">WATCH</h5>
-                    <p>Premium watches for every occasion. Quality, style, and precision in every timepiece.</p>
+                    <h5 class="footer-title">WESHOP</h5>
+                    <p>Your trusted partner for premium electronics and smart devices.</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="base.html" class="footer-link">Home</a></li>
-                        <li><a href="products.html" class="footer-link">Shop</a></li>
-                        <li><a href="pages/about.html" class="footer-link">About Us</a></li>
-                        <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="product.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -558,33 +778,118 @@
                         <li><a href="#" class="footer-link">Track Order</a></li>
                         <li><a href="#" class="footer-link">Returns</a></li>
                         <li><a href="#" class="footer-link">FAQ</a></li>
-                        <li><a href="#" class="footer-link">Size Guide</a></li>
+                        <li><a href="#" class="footer-link">Warranty</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Newsletter</h5>
-                    <p>Subscribe for exclusive offers and new arrivals</p>
-                    <form class="d-flex">
-                        <input type="email" class="form-control form-control-sm" placeholder="Your email">
-                        <button class="btn btn-outline-success btn-sm ms-2" type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="mb-3">
+                    <h5 class="footer-title">Connect With Us</h5>
+                    <p>Follow us on social media for updates and exclusive offers</p>
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <p>&copy; 2025 WATCH. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WESHOP. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="/js/product.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/products.js"></script>
+
+    <script>
+        // Additional functionality for the new product page
+        function quickView(productId) {
+            console.log('Quick view for product:', productId);
+            // Implement quick view modal
+        }
+
+        function compareProduct(productId) {
+            console.log('Compare product:', productId);
+            // Implement product comparison
+        }
+
+        function toggleWishlist(btn) {
+            btn.classList.toggle('active');
+            const icon = btn.querySelector('i');
+            if (btn.classList.contains('active')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+            }
+        }
+
+        function setView(viewType) {
+            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const grid = document.getElementById('productGrid');
+            if (viewType === 'list') {
+                grid.style.gridTemplateColumns = '1fr';
+            } else {
+                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            }
+        }
+
+        function clearFilters() {
+            document.querySelectorAll('.form-check-input').forEach(cb => cb.checked = false);
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            filterProducts();
+        }
+
+        function loadMoreProducts() {
+            console.log('Loading more products...');
+            // Implement infinite scroll or load more functionality
+        }
+
+        // Filter functionality
+        function filterProducts() {
+            const cards = document.querySelectorAll('.product-card');
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const price = parseFloat(card.dataset.price);
+                const category = card.dataset.category;
+
+                // Check category filters
+                const catPhone = document.getElementById('catPhone').checked;
+                const catLaptop = document.getElementById('catLaptop').checked;
+                const catWatch = document.getElementById('catWatch').checked;
+
+                let showByCategory = false;
+                if (category === 'phone' && catPhone) showByCategory = true;
+                if (category === 'computer' && catLaptop) showByCategory = true;
+                if (category === 'watch' && catWatch) showByCategory = true;
+
+                // Show/hide based on filters
+                if (price >= minPrice && price <= maxPrice && showByCategory) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('productCount').textContent = visibleCount;
+        }
+
+        // Add event listeners for filters
+        document.getElementById('minPrice').addEventListener('input', filterProducts);
+        document.getElementById('maxPrice').addEventListener('input', filterProducts);
+        document.querySelectorAll('.form-check-input').forEach(cb => {
+            cb.addEventListener('change', filterProducts);
+        });
+    </script>
 </body>
 
 </html>

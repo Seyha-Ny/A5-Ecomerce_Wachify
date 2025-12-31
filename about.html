@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>About WeShop - Premium Electronics Store</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/feedback.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
@@ -43,12 +44,13 @@
                             Collections
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
-                            <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-phone"></i>
+                            <li><a class="dropdown-item" href="collections/phones.html"><i class="bi bi-phone"></i>
                                     Smart
                                     Phone</a></li>
-                            <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-smartwatch"></i>
+                            <li><a class="dropdown-item" href="collections/watches.html"><i
+                                        class="bi bi-smartwatch"></i>
                                     Smart Watch</a></li>
-                            <li><a class="dropdown-item" href="page/products.html"><i class="bi bi-laptop"></i>
+                            <li><a class="dropdown-item" href="collections/laptops.html"><i class="bi bi-laptop"></i>
                                     Laptop</a></li>
                         </ul>
                     </li>
@@ -92,34 +94,205 @@
             </div>
         </div>
     </nav>
-    <div class="about-page">
-        <div class="title-about">
-            <div class="about-info">
-                <h3>About Us</h3>
-                <h5>Our Mission</h5>
-                <p>At ElectronicZ, we're more than just an online electronics store – we're your trusted partner in all
-                    things tech. With a passion for innovation and a commitment to excellence.</p>
-                <div class="about-btn">
-                    <button>Buy Now</button>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="badge bg-warning text-dark mb-3">Since 2020</div>
+                        <h1 class="display-3 fw-bold mb-4">About <span class="text-warning">WeShop</span></h1>
+                        <p class="lead mb-4">Your trusted partner for premium electronics and smart devices. We bring
+                            you the latest technology with unmatched quality and service.</p>
+                        <div class="hero-stats d-flex gap-4 mb-4">
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">50K+</h3>
+                                <p class="mb-0">Happy Customers</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">1000+</h3>
+                                <p class="mb-0">Products</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">24/7</h3>
+                                <p class="mb-0">Support</p>
+                            </div>
+                        </div>
+                        <div class="hero-buttons d-flex gap-3">
+                            <a href="product.html" class="btn btn-warning btn-lg">Shop Now</a>
+                            <a href="#contact" class="btn btn-outline-warning btn-lg">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="about-img">
-                <div class="img1">
-                    <img src="./img/about1.png" alt="">
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+                            alt="Electronics Store" class="img-fluid rounded-3 shadow">
+                    </div>
                 </div>
-                <div class="img2">
-                    <img src="./img/about2.png" alt="">
-                </div>
-                <div class="img2">
-                    <img src="./img/about3.png" alt="">
-                </div>
-                
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Mission Section -->
+    <section class="mission-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Our Mission & Vision</h2>
+                    <p class="lead text-muted">Empowering your digital lifestyle with cutting-edge technology</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mission-card h-100 p-4 bg-light rounded-3">
+                        <div class="mission-icon mb-3">
+                            <i class="fas fa-bullseye text-warning fs-1"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Our Mission</h3>
+                        <p>To provide premium quality electronics and smart devices that enhance your digital lifestyle.
+                            We curate the best products from top brands, ensuring quality, innovation, and customer
+                            satisfaction in every purchase.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="vision-card h-100 p-4 bg-light rounded-3">
+                        <div class="vision-icon mb-3">
+                            <i class="fas fa-eye text-warning fs-1"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Our Vision</h3>
+                        <p>To become the most trusted electronics retailer, known for exceptional customer service,
+                            cutting-edge technology, and a seamless shopping experience that connects people with the
+                            devices they love.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Values Section -->
+    <section class="values-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Our Core Values</h2>
+                    <p class="lead">The principles that guide everything we do</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-shield-alt text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Quality First</h4>
+                        <p>We never compromise on quality. Every product is carefully selected and tested.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-users text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Customer Focus</h4>
+                        <p>Your satisfaction is our priority. We're here to help you find the perfect device.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-lightbulb text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Innovation</h4>
+                        <p>We stay ahead of technology trends to bring you the latest and greatest.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-handshake text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Trust & Integrity</h4>
+                        <p>We believe in transparent business practices and building lasting relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Meet Our Team</h2>
+                    <p class="lead text-muted">The passionate people behind WeShop</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src=""
+                                alt="Team Member" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Khoun Panha</h4>
+                        <p class="text-muted mb-2">CEO & Founder</p>
+                        <p class="small">Tech enthusiast with 15+ years in e-commerce and retail.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src=""
+                                alt="Team Member" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Ny Seyha</h4>
+                        <p class="text-muted mb-2">Head of Operations</p>
+                        <p class="small">Ensuring smooth operations and exceptional customer experience.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src=""
+                                alt="Team Member" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Phan Phoun</h4>
+                        <p class="text-muted mb-2">Tech Lead</p>
+                        <p class="small">Driving innovation and technical excellence in our platform.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-github"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-stack-overflow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-warning text-dark">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-3">Ready to Upgrade Your Tech?</h2>
+            <p class="lead mb-4">Join thousands of satisfied customers who trust WeShop for their electronics needs</p>
+            <div class="cta-buttons d-flex gap-3 justify-content-center">
+                <a href="product.html" class="btn btn-dark btn-lg">Browse Products</a>
+                <a href="#" class="btn btn-outline-dark btn-lg">Get Support</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -131,10 +304,10 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="base.html" class="footer-link">Home</a></li>
-                        <li><a href="products.html" class="footer-link">Shop</a></li>
-                        <li><a href="pages/about.html" class="footer-link">About Us</a></li>
-                        <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="product.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -169,6 +342,9 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Account Management Script -->
     <script>
         // Check if user is logged in on page load
@@ -198,7 +374,7 @@
             e.preventDefault();
             sessionStorage.removeItem('currentUser');
             localStorage.removeItem('rememberedUser');
-            window.location.href = 'registeration/index.html';
+            window.location.href = 'login.html';
         });
 
         // Check session on page load
