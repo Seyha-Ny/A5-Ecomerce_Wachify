@@ -337,6 +337,91 @@
                 background-position: -200% 0;
             }
         }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar-brand i {
+            margin-right: 0.5rem;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        .dropdown-menu {
+            background: #2a2a2a;
+            border: none;
+        }
+
+        .dropdown-item {
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+        }
+
+        .btn-outline-success {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-success:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--dark-color);
+        }
     </style>
 </head>
 
@@ -344,7 +429,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark" href="dashboard.html">
+            <a class="navbar-brand" href="dashboard.html">
                 <i class="bi bi-bing"></i>
                 WESHOP
             </a>
@@ -355,13 +440,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="dashboard.html">Home</a>
+                        <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" href="product.html">Shop</a>
+                        <a class="nav-link active" href="product.html">Shop</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="#" id="collectionsDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Collections
                         </a>
@@ -376,10 +461,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex gap-2 ms-3">
@@ -889,6 +974,45 @@
         document.querySelectorAll('.form-check-input').forEach(cb => {
             cb.addEventListener('change', filterProducts);
         });
+    </script>
+
+    <!-- Account Management Script -->
+    <script>
+        // Check if user is logged in on page load
+        function checkUserSession() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            const accountNameSpan = document.getElementById('accountName');
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const divider = document.getElementById('divider');
+
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                accountNameSpan.textContent = user.name;
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                divider.style.display = 'block';
+            } else {
+                accountNameSpan.textContent = 'Account';
+                loginBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+                divider.style.display = 'none';
+            }
+        }
+
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('rememberedUser');
+            window.location.href = 'login.html';
+        });
+
+        // Check session on page load
+        checkUserSession();
+
+        // Listen for storage changes (logout in other tabs)
+        window.addEventListener('storage', checkUserSession);
     </script>
 </body>
 
