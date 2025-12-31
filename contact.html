@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/about.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-dark" href="dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  text-dark" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="product.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="collectionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-phone"></i>
+                                    Smart
+                                    Phone</a></li>
+                            <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-smartwatch"></i>
+                                    Smart Watch</a></li>
+                            <li><a class="dropdown-item" href="page/products.html"><i class="bi bi-laptop"></i>
+                                    Laptop</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark​ active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2 ms-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search watches..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" ​ id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Account Management Script -->
+    <script>
+        // Check if user is logged in on page load
+        function checkUserSession() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            const accountNameSpan = document.getElementById('accountName');
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const divider = document.getElementById('divider');
+
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                accountNameSpan.textContent = user.name;
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                divider.style.display = 'block';
+            } else {
+                accountNameSpan.textContent = 'Account';
+                loginBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+                divider.style.display = 'none';
+            }
+        }
+
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('rememberedUser');
+            window.location.href = 'registeration/index.html';
+        });
+
+        // Check session on page load
+        checkUserSession();
+
+        // Listen for storage changes (logout in other tabs)
+        window.addEventListener('storage', checkUserSession);
+    </script>
+</body>
