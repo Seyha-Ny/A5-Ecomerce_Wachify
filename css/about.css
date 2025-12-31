@@ -244,13 +244,25 @@
     }
 }
 .customer{
-    padding-top: 60px;
+    padding-top: 100px;
 }
 .customer h3{
     text-align: center;
     font-size: 34px;
 }
+.partner{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 25px;
+}
+.partner-img{
+    display: flex;
+}
 
+.partner-img img{
+    width: 150px;
+}
 
 
 
