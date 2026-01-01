@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop Premium Electronics at WeShop - Smartphones, Laptops, Smartwatches">
+    <title>Shop - WeShop</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="js/main.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</head>
+<body>
+    <header class="header" role="banner">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="logo">
+                <a href="index.html" aria-label="WeShop Home">
+                    <i class="fas fa-shopping-bag"></i> WeShop
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html" class="active">Shop</a></li>
+                <li><a href="collections/phones.html">Phones</a></li>
+                <li><a href="collections/laptops.html">Laptops</a></li>
+                <li><a href="collections/watches.html">Watches</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" aria-label="Login">
+                    <i class="fas fa-user"></i>
+                </a>
+                <button class="cart-btn" aria-label="Shopping Cart" data-cart-count="0">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="shop-page">
+        <aside class="sidebar" aria-label="Product filters">
+            <h2>Filters</h2>
+            <div class="filter-group">
+                <h3>Category</h3>
+                <label class="checkbox">
+                    <input type="checkbox" name="category" value="phones"> Smartphones
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="category" value="laptops"> Laptops
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="category" value="watches"> Smartwatches
+                </label>
+            </div>
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <input type="range" min="0" max="3000" step="100" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="3000" step="100" id="price-max" aria-label="Maximum price">
+                <div class="price-display">
+                    <span id="min-price">$0</span> - <span id="max-price">$3000</span>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h3>Brand</h3>
+                <label class="checkbox">
+                    <input type="checkbox" name="brand" value="apple"> Apple
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="brand" value="samsung"> Samsung
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="brand" value="dell"> Dell
+                </label>
+            </div>
+            <div class="filter-group">
+                <h3>Rating</h3>
+                <label class="checkbox">
+                    <input type="checkbox" name="rating" value="4"> 4+ Stars
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="rating" value="3"> 3+ Stars
+                </label>
+            </div>
+            <button class="btn btn-secondary" id="apply-filters">Apply Filters</button>
+            <button class="btn btn-outline" id="clear-filters">Clear All</button>
+        </aside>
+
+        <section class="products-section" aria-labelledby="products-title">
+            <header class="products-header">
+                <h1 id="products-title">All Products</h1>
+                <div class="controls">
+                    <form class="search-form">
+                        <input type="search" placeholder="Search products..." aria-label="Search products">
+                        <button type="submit" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="view-toggle">
+                        <button id="grid-view" class="view-btn active" aria-label="Grid view">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button id="list-view" class="view-btn" aria-label="List view">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    <select id="sort-select" aria-label="Sort products">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </div>
+            </header>
+
+            <div class="products-grid" id="products-container" role="region" aria-label="Product listings">
+                <!-- Products will be loaded here by JS -->
+                <div class="product-card" data-product-id="1">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200?text=iPhone+15" alt="iPhone 15">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="quick-view-btn" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>iPhone 15</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <p class="price">$999</p>
+                        <button class="btn btn-primary add-to-cart" data-product-id="1">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- More product cards -->
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn prev" aria-label="Previous page">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="page-info">Page 1 of 5</span>
+                <button class="page-btn next" aria-label="Next page">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div class="modal-details">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <p id="modal-price"></p>
+                    <button class="btn btn-primary" id="modal-add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WeShop</h3>
+                <p>Your premium electronics destination.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="product.html">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WeShop. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
