@@ -128,9 +128,23 @@
 
 .img2 img {
     width: 300px;
-    height: 300px;
     border-radius: 10px;
 
+}
+.img3 img {
+    width: 300px;
+    height: 370px;
+    border-radius: 10px;
+
+}
+.img1 img:hover{
+    transform: translateY(-20px);
+}
+.img2 img:hover{
+    transform: translateY(-20px);
+}
+.img3 img:hover{
+    transform: translateY(-20px);
 }
 
 .teams {
@@ -264,12 +278,13 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin-top: 5px;
+    margin-top: 45px;
+    
 }
 
 .partner-img {
     display: flex;
-    gap: 90px;
+    gap: 50px;
     will-change: transform;
 
 }
@@ -277,6 +292,7 @@
 .partner-img img {
     width: 150px;
     flex-shrink: 0;
+    
 }
 
 
