@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization -->
+    <title>About WeShop - Premium Electronics Store</title>
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons for additional icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   
+    <!-- Additional CSS files for specific page styling -->
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/feedback.css">
+    <!-- Google Material Icons for additional icon options -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Kit for extended icon library -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <!-- Navigation Bar - Main site navigation with user account and cart -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <!-- Brand logo linking to home -->
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <!-- Mobile navigation toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation menu items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Shop</a>
+                    </li>
+                    <!-- Collections dropdown menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="collections/phones.html"><i class="bi bi-phone"></i>
+                                    Smart
+                                    Phone</a></li>
+                            <li><a class="dropdown-item" href="collections/watches.html"><i
+                                        class="bi bi-smartwatch"></i>
+                                    Smart Watch</a></li>
+                            <li><a class="dropdown-item" href="collections/laptops.html"><i class="bi bi-laptop"></i>
+                                    Laptop</a></li>
+                        </ul>
+                    </li>
+                    <!-- Active page indicator -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <!-- Search, account, and cart controls -->
+                <div class="d-flex gap-2 ms-3">
+                    <!-- Search form -->
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search watches..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <!-- Account dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <!-- Shopping cart button with item count -->
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" ​ id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section - Main introduction to WeShop -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <!-- Hero content with company information -->
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <!-- Company establishment badge -->
+                        <div class="badge bg-warning text-dark mb-3">Since 2020</div>
+                        <!-- Main heading with brand highlight -->
+                        <h1 class="display-3 fw-bold mb-4">About <span class="text-warning">WeShop</span></h1>
+                        <!-- Company description -->
+                        <p class="lead mb-4">Your trusted partner for premium electronics and smart devices. We bring
+                            you the latest technology with unmatched quality and service.</p>
+                        <!-- Company statistics -->
+                        <div class="hero-stats d-flex gap-4 mb-4">
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">50K+</h3>
+                                <p class="mb-0">Happy Customers</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">1000+</h3>
+                                <p class="mb-0">Products</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">24/7</h3>
+                                <p class="mb-0">Support</p>
+                            </div>
+                        </div>
+                        <!-- Call-to-action buttons -->
+                        <div class="hero-buttons d-flex gap-3">
+                            <a href="product.html" class="btn btn-warning btn-lg">Shop Now</a>
+                            <a href="#contact" class="btn btn-outline-warning btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero image -->
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+                            alt="Electronics Store" class="img-fluid rounded-3 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section - Company mission and vision statements -->
+    <section class="mission-section py-5">
+        <div class="container">
+            <!-- Section header -->
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Our Mission & Vision</h2>
+                    <p class="lead text-muted">Empowering your digital lifestyle with cutting-edge technology</p>
+                </div>
+            </div>
+            <!-- Mission and Vision cards -->
+            <div class="row g-4">
+                <!-- Mission card -->
+                <div class="col-lg-6">
+                    <div class="mission-card h-100 p-4 bg-light rounded-3">
+                        <div class="mission-icon mb-3">
+                            <i class="fas fa-bullseye text-warning fs-1"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Our Mission</h3>
+                        <p>To provide premium quality electronics and smart devices that enhance your digital lifestyle.
+                            We curate the best products from top brands, ensuring quality, innovation, and customer
+                            satisfaction in every purchase.</p>
+                    </div>
+                </div>
+                <!-- Vision card -->
+                <div class="col-lg-6">
+                    <div class="vision-card h-100 p-4 bg-light rounded-3">
+                        <div class="vision-icon mb-3">
+                            <i class="fas fa-eye text-warning fs-1"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Our Vision</h3>
+                        <p>To become the most trusted electronics retailer, known for exceptional customer service,
+                            cutting-edge technology, and a seamless shopping experience that connects people with the
+                            devices they love.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section - Core company values and principles -->
+    <section class="values-section py-5 bg-dark text-white">
+        <div class="container">
+            <!-- Section header -->
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Our Core Values</h2>
+                    <p class="lead">The principles that guide everything we do</p>
+                </div>
+            </div>
+            <!-- Core values grid -->
+            <div class="row g-4">
+                <!-- Value 1: Quality First -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-shield-alt text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Quality First</h4>
+                        <p>We never compromise on quality. Every product is carefully selected and tested.</p>
+                    </div>
+                </div>
+                <!-- Value 2: Customer Focus -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-users text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Customer Focus</h4>
+                        <p>Your satisfaction is our priority. We're here to help you find the perfect device.</p>
+                    </div>
+                </div>
+                <!-- Value 3: Innovation -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-lightbulb text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Innovation</h4>
+                        <p>We stay ahead of technology trends to bring you the latest and greatest.</p>
+                    </div>
+                </div>
+                <!-- Value 4: Trust & Integrity -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card text-center p-4">
+                        <div class="value-icon mb-3">
+                            <i class="fas fa-handshake text-warning fs-1"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Trust & Integrity</h4>
+                        <p>We believe in transparent business practices and building lasting relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section - Meet the team members behind WeShop -->
+    <section class="team-section py-5">
+        <div class="container">
+            <!-- Section header -->
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Meet Our Team</h2>
+                    <p class="lead text-muted">The passionate people behind WeShop</p>
+                </div>
+            </div>
+            <!-- Team member cards -->
+            <div class="row g-4">
+                <!-- Team member 1: CEO & Founder -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src="img/team/panha.jpg" alt="Team Member" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Khoun Panha</h4>
+                        <p class="text-muted mb-2">CEO & Founder</p>
+                        <p class="small">Tech enthusiast with 15+ years in e-commerce and retail.</p>
+                        <!-- Social media links -->
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team member 2: Head of Operations -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src="/img/team/phoun.jpg" alt="Phan Phoun" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Phan Phoun</h4>
+                        <p class="text-muted mb-2">Head of Operations</p>
+                        <p class="small">Ensuring smooth operations and exceptional customer experience.</p>
+                        <!-- Social media links -->
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team member 3: Tech Lead -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card text-center">
+                        <div class="team-image mb-3">
+                            <img src="/img/team/seyha.jpg" alt="Tech Lead" class="img-fluid rounded-circle">
+                        </div>
+                        <h4 class="h5 mb-2">Ny Seyha</h4>
+                        <p class="text-muted mb-2">Tech Lead</p>
+                        <p class="small">Driving innovation and technical excellence in our platform.</p>
+                        <!-- Social media links -->
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-warning me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-warning me-2"><i class="fab fa-github"></i></a>
+                            <a href="#" class="text-warning"><i class="fab fa-stack-overflow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section - Final marketing banner -->
+    <section class="cta-section py-5 bg-warning text-dark">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-3">Ready to Upgrade Your Tech?</h2>
+            <p class="lead mb-4">Join thousands of satisfied customers who trust WeShop for their electronics needs</p>
+            <!-- CTA buttons -->
+            <div class="cta-buttons d-flex gap-3 justify-content-center">
+                <a href="product.html" class="btn btn-dark btn-lg">Browse Products</a>
+                <a href="#" class="btn btn-outline-dark btn-lg">Get Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Site footer with links and information -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <!-- Footer column 1: Brand information -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">WATCH</h5>
+                    <p>Premium watches for every occasion. Quality, style, and precision in every timepiece.</p>
+                </div>
+                <!-- Footer column 2: Quick navigation links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="product.html" class="footer-link">Shop</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Footer column 3: Customer service links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Track Order</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Size Guide</a></li>
+                    </ul>
+                </div>
+                <!-- Footer column 4: Newsletter signup -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Newsletter</h5>
+                    <p>Subscribe for exclusive offers and new arrivals</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control form-control-sm" placeholder="Your email">
+                        <button class="btn btn-outline-success btn-sm ms-2" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Footer bottom section with social media and copyright -->
+            <div class="footer-bottom">
+                <div class="mb-3">
+                    <!-- Social media icons -->
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <!-- Copyright notice -->
+                <p>&copy; 2025 WATCH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript files -->
+    <!-- Bootstrap JS for interactive components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Account Management Script - Handles user authentication and session -->
+    <script>
+        /**
+         * Check if user is logged in on page load
+         * Updates UI based on authentication status
+         */
+        function checkUserSession() {
+            // Get current user from sessionStorage
+            const currentUser = sessionStorage.getItem('currentUser');
+            // Get DOM elements for UI updates
+            const accountNameSpan = document.getElementById('accountName');
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const divider = document.getElementById('divider');
+
+            if (currentUser) {
+                // User is logged in - show user info and logout button
+                const user = JSON.parse(currentUser);
+                accountNameSpan.textContent = user.name;
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                divider.style.display = 'block';
+            } else {
+                // User is not logged in - show login button
+                accountNameSpan.textContent = 'Account';
+                loginBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+                divider.style.display = 'none';
+            }
+        }
+
+        /**
+         * Handle user logout
+         * Clears session data and redirects to login page
+         */
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Clear session storage
+            sessionStorage.removeItem('currentUser');
+            // Clear remembered user data
+            localStorage.removeItem('rememberedUser');
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+
+        // Check session on page load
+        checkUserSession();
+
+        // Listen for storage changes (logout in other tabs)
+        window.addEventListener('storage', checkUserSession);
+    </script>
+</body>
