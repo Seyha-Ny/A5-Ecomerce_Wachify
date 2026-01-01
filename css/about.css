@@ -344,3 +344,187 @@
 .social-icons a:hover {
     transform: scale(1.2);
 }
+html {
+    scroll-behavior: smooth;
+}
+
+/* responsive */
+/* ===============================
+   SMARTPHONE UX RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Reset fixed heights */
+    .product,
+    .about-page {
+        height: auto !important;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+        padding: 0.6rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar-collapse {
+        background: var(--dark-color);
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        color: #fff !important;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    /* Search bar usability */
+    .form-control {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    /* ================= ABOUT SECTION ================= */
+    .title-about {
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .about-info {
+        margin: 40px 0 0 0;
+        align-items: center;
+    }
+
+    .about-info h3 {
+        font-size: 20px;
+    }
+
+    .about-info h5 {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .about-info p {
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* Buy button = easy thumb tap */
+    .about-btn button {
+        width: 140px;
+        height: 48px;
+        font-size: 15px;
+        border-radius: 25px;
+    }
+
+    /* ================= IMAGES ================= */
+    .about-img {
+        flex-direction: column;
+        margin: 30px 0 0 0;
+        gap: 18px;
+    }
+
+    .img1 img,
+    .img2 img,
+    .img3 img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    /* Disable hover jump on mobile */
+    .img1 img:hover,
+    .img2 img:hover,
+    .img3 img:hover {
+        transform: none;
+    }
+
+    /* ================= TEAM ================= */
+    .teams {
+        padding-top: 40px;
+    }
+
+    .title-team h3 {
+        font-size: 26px;
+    }
+
+    .title-team p {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .team-container {
+        padding: 0 15px;
+    }
+
+    .team-image {
+        height: 260px;
+    }
+
+    .team-info {
+        margin: -20px 15px 15px;
+        padding: 18px;
+    }
+
+    .team-info h3 {
+        font-size: 18px;
+    }
+
+    /* Bigger social icons for touch */
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* ================= PARTNERS ================= */
+    .customer {
+        padding-top: 60px;
+    }
+
+    .partner {
+        margin-top: 30px;
+    }
+
+    .partner-img {
+        gap: 20px;
+    }
+
+    .partner-img img {
+        width: 90px;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+        padding: 2.5rem 1rem 1rem;
+        text-align: center;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-link {
+        display: block;
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
