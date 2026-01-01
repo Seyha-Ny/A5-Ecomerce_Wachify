@@ -82,7 +82,6 @@
         .form-control {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
         }
 
         .form-control::placeholder {
@@ -92,7 +91,6 @@
         .form-control:focus {
             background: rgba(255, 255, 255, 0.15);
             border-color: var(--primary-color);
-            color: #fff;
             box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
         }
 
@@ -412,7 +410,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="base.html">
-                <!-- <i class="bi bi-watch"></i> -->
+                
                 <i class="bi bi-bing"></i>
                 WeShop
             </a>
@@ -429,10 +427,10 @@
                         <a class="nav-link " href="product.html">Shop</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+                        <button class="nav-link dropdown-toggle" id="collectionsDropdown" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Collections
-                        </a>
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
                             <li><a class="dropdown-item" href="pages/products.html"><i class="bi bi-phone"></i>
                                     Smart
@@ -773,14 +771,14 @@
             e.preventDefault();
             sessionStorage.removeItem('currentUser');
             localStorage.removeItem('rememberedUser');
-            window.location.href = 'registeration/index.html';
+            globalThis.location.href = 'registeration/index.html';
         });
 
         // Check session on page load
         checkUserSession();
 
         // Listen for storage changes (logout in other tabs)
-        window.addEventListener('storage', checkUserSession);
+        globalThis.addEventListener('storage', checkUserSession);
     </script>
 </body>
 

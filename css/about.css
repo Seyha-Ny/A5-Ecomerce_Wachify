@@ -55,7 +55,7 @@
 }
 
 .dropdown-item {
-    color: #fff;
+    color: var(--light-color);
     transition: background 0.3s ease;
 }
 
@@ -300,7 +300,7 @@
 /* Footer */
 .footer {
     background: var(--dark-color);
-    color: #fff;
+    color: #e8e8e8;
     padding: 3rem 0 1rem;
     margin-top: 5rem;
 }
@@ -329,21 +329,22 @@
     color: #999;
 }
 
-.social-icons {
+.footer .social-icons {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-.social-icons a {
-    color: var(--primary-color);
+.footer .social-icons a {
+    color: #ffd700;
     font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.footer .social-icons a:hover {
     transform: scale(1.2);
 }
+
 html {
     scroll-behavior: smooth;
 }
