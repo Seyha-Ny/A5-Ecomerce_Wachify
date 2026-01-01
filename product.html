@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization -->
+    <title>Shop Premium Electronics - WeShop</title>
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons for additional icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS files -->
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/feedback.css">
+</head>
+
+<body>
+    <!-- Navigation Bar - Main site navigation with user account and cart -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <!-- Brand logo linking to home -->
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <!-- Mobile navigation toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation menu items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Active page indicator -->
+                        <a class="nav-link active" href="product.html">Shop</a>
+                    </li>
+                    <!-- Collections dropdown menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="collections/phones.html"><i class="bi bi-phone"></i>
+                                    Smart
+                                    Phone</a></li>
+                            <li><a class="dropdown-item" href="collections/watches.html"><i
+                                        class="bi bi-smartwatch"></i>
+                                    Smart Watch</a></li>
+                            <li><a class="dropdown-item" href="collections/laptops.html"><i class="bi bi-laptop"></i>
+                                    Laptop</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <!-- Search, account, and cart controls -->
+                <div class="d-flex gap-2 ms-3">
+                    <!-- Search form -->
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search products..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <!-- Account dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <!-- Shopping cart button with item count -->
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Main product page banner with trust badges -->
+    <section class="hero-section" style="position: relative; min-height: 60vh; display: flex; align-items: center;">
+        <!-- Hero overlay for text visibility -->
+        <div class="hero-overlay"></div>
+        <!-- Floating cards container (currently commented out) -->
+        <div class="floating-cards">
+            <!-- <div class="floating-card">
+                <i class="fas fa-shipping-fast me-2"></i>
+                <span>Free Shipping</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-shield-alt me-2"></i>
+                <span>2 Year Warranty</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-award me-2"></i>
+                <span>Premium Quality</span>
+            </div> -->
+        </div>
+        <!-- Hero content container -->
+        <div class="container text-center" style="position: relative; z-index: 3;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Main heading -->
+                    <h1 class="display-3 fw-bold mb-4 text-white">Premium Electronics Collection</h1>
+                    <!-- Hero description -->
+                    <p class="lead mb-4 text-white">Discover cutting-edge technology with our curated selection of
+                        smartphones, laptops, and smartwatches</p>
+                    <!-- Trust badges showing company guarantees -->
+                    <div class="trust-badges">
+                        <!-- Trust badge 1: Authentic Products -->
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle text-warning"></i>
+                            <span class="text-white">Authentic Products</span>
+                        </div>
+                        <!-- Trust badge 2: Fast Delivery -->
+                        <div class="trust-badge">
+                            <i class="fas fa-truck text-warning"></i>
+                            <span class="text-white">Fast Delivery</span>
+                        </div>
+                        <!-- Trust badge 3: 24/7 Support -->
+                        <div class="trust-badge">
+                            <i class="fas fa-headset text-warning"></i>
+                            <span class="text-white">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero background image -->
+        <img src="./img/shop1.webp" alt="Hero Background"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    </section>
+
+    <!-- Advanced Filters Section - Product filtering options -->
+    <section class="container my-5">
+        <div class="row">
+            <!-- Filters column -->
+            <div class="col-lg-3">
+                <div class="advanced-filters">
+                    <!-- Filters heading -->
+                    <h4 class="mb-4">Filters</h4>
+
+                    <!-- Price Range Filter -->
+                    <div class="filter-section">
+                        <h5>Price Range</h5>
+                        <div class="price-range">
+                            <!-- Minimum price input -->
+                            <input type="number" class="form-control" placeholder="Min" id="minPrice">
+                            <span>-</span>
+                            <!-- Maximum price input -->
+                            <input type="number" class="form-control" placeholder="Max" id="maxPrice">
+                        </div>
+                        <!-- Price range slider -->
+                        <input type="range" class="form-range mt-2" min="0" max="2000" id="priceSlider">
+                    </div>
+
+                    <!-- Categories Filter -->
+                    <div class="filter-section">
+                        <h5>Categories</h5>
+                        <!-- Smart Phones checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catPhone" checked>
+                            <label class="form-check-label" for="catPhone">
+                                Smart Phones (5)
+                            </label>
+                        </div>
+                        <!-- Laptops checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catLaptop" checked>
+                            <label class="form-check-label" for="catLaptop">
+                                Laptops (5)
+                            </label>
+                        </div>
+                        <!-- Smart Watches checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="catWatch" checked>
+                            <label class="form-check-label" for="catWatch">
+                                Smart Watches (5)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-section">
+                        <h5>Brand</h5>
+                        <!-- Apple checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandApple">
+                            <label class="form-check-label" for="brandApple">
+                                Apple
+                            </label>
+                        </div>
+                        <!-- Samsung checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandSamsung">
+                            <label class="form-check-label" for="brandSamsung">
+                                Samsung
+                            </label>
+                        </div>
+                        <!-- Google checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brandGoogle">
+                            <label class="form-check-label" for="brandGoogle">
+                                Google
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-section">
+                        <h5>Rating</h5>
+                        <!-- 4 stars and up radio button -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="rating4">
+                            <label class="form-check-label" for="rating4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                & Up
+                            </label>
+                        </div>
+                        <!-- 3 stars and up radio button -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rating" id="rating3">
+                            <label class="form-check-label" for="rating3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                & Up
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Clear filters button -->
+                    <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">Clear All Filters</button>
+                </div>
+            </div>
+
+            <!-- Products column -->
+            <div class="col-lg-9">
+                <!-- View Toggle and Sort controls -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <!-- View toggle buttons (Grid/List) -->
+                    <div class="view-toggle">
+                        <!-- Grid view button (active) -->
+                        <button class="view-btn active" onclick="setView('grid')">
+                            <i class="fas fa-th"></i> Grid
+                        </button>
+                        <!-- List view button -->
+                        <button class="view-btn" onclick="setView('list')">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
+                    <!-- Product count and sort dropdown -->
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- Product count display -->
+                        <span class="text-muted">Showing <span id="productCount">15</span> products</span>
+                        <!-- Sort dropdown -->
+                        <select class="form-select" style="width: auto;">
+                            <option>Sort by: Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest First</option>
+                            <option>Best Rated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product Grid Container -->
+                <div class="product-grid" id="productGrid">
+                    <!-- Product Card 1: Google Pixel 8 Pro -->
+                    <div class="product-card" data-category="phone" data-price="599">
+                        <!-- Product badge -->
+                        <div class="product-badge">New</div>
+                        <!-- Product image container -->
+                        <div class="product-image">
+                            <!-- Quick action buttons -->
+                            <div class="quick-actions">
+                                <!-- Quick view button -->
+                                <button class="quick-action-btn" onclick="quickView('pixel01')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <!-- Compare button -->
+                                <button class="quick-action-btn" onclick="compareProduct('pixel01')">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                            <!-- Product image -->
+                            <img src="/img/menu9.png" alt="Google Pixel">
+                        </div>
+                        <!-- Product information -->
+                        <div class="product-info">
+                            <!-- Product title -->
+                            <h3 class="product-title">Google Pixel 8 Pro</h3>
+                            <!-- Product subtitle -->
+                            <p class="product-subtitle">Latest flagship with AI camera</p>
+                            <!-- Product rating -->
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <!-- Rating count -->
+                                <span class="rating-count">(234)</span>
+                            </div>
+                            <!-- Product price -->
+                            <div class="product-price">
+                                <span class="current-price">$599</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <!-- Product action buttons -->
+                            <div class="product-actions">
+                                <!-- Add to cart button -->
+                                <button class="add-to-cart-btn"
+                                    onclick="addToCart('pixel01', 'Google Pixel 8 Pro', 599, '/img/menu9.png')">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <!-- Wishlist button -->
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                                    <i class="far fa-heart"></i>
+
+                                    <!-- Categories Filter -->
+                                    <div class="filter-section">
+                                        <h5>Categories</h5>
+                                        <!-- Smart Phones checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catPhone" checked>
+                                            <label class="form-check-label" for="catPhone">
+                                                Smart Phones (5)
+                                            </label>
+                                        </div>
+                                        <!-- Laptops checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catLaptop" checked>
+                                            <label class="form-check-label" for="catLaptop">
+                                                Laptops (5)
+                                            </label>
+                                        </div>
+                                        <!-- Smart Watches checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catWatch" checked>
+                                            <label class="form-check-label" for="catWatch">
+                                                Smart Watches (5)
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Brand Filter -->
+                                    <div class="filter-section">
+                                        <h5>Brand</h5>
+                                        <!-- Apple checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandApple">
+                                            <label class="form-check-label" for="brandApple">
+                                                Apple
+                                            </label>
+                                        </div>
+                                        <!-- Samsung checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandSamsung">
+                                            <label class="form-check-label" for="brandSamsung">
+                                                Samsung
+                                            </label>
+                                        </div>
+                                        <!-- Google checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandGoogle">
+                                            <label class="form-check-label" for="brandGoogle">
+                                                Google
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rating Filter -->
+                                    <div class="filter-section">
+                                        <h5>Rating</h5>
+                                        <!-- 4 stars and up radio button -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating4">
+                                            <label class="form-check-label" for="rating4">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                & Up
+                                            </label>
+                                        </div>
+                                        <!-- 3 stars and up radio button -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating3">
+                                            <label class="form-check-label" for="rating3">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                & Up
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Clear filters button -->
+                                    <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">Clear All
+                                        Filters</button>
+                                    <footer class="footer">
+                                        <div class="container">
+                                            <div class="row g-4 mb-4">
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">WESHOP</h5>
+                                                    <p>Your trusted partner for premium electronics and smart devices.
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Quick Links</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
+                                                        <li><a href="product.html" class="footer-link">Shop</a></li>
+                                                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                                                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Customer Service</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="#" class="footer-link">Track Order</a></li>
+                                                        <li><a href="#" class="footer-link">Returns</a></li>
+                                                        <li><a href="#" class="footer-link">FAQ</a></li>
+                                                        <li><a href="#" class="footer-link">Warranty</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Footer column 4: Social media -->
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Connect With Us</h5>
+                                                    <p>Follow us on social media for updates and exclusive offers</p>
+                                                    <!-- Social media icons -->
+                                                    <div class="social-icons">
+                                                        <a href="#" aria-label="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                        <a href="#" aria-label="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                        <a href="#" aria-label="Twitter"><i
+                                                                class="fab fa-twitter"></i></a>
+                                                        <a href="#" aria-label="YouTube"><i
+                                                                class="fab fa-youtube"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Footer bottom section with copyright -->
+                                            <div class="footer-bottom">
+                                                <p>&copy; 2025 WESHOP. All rights reserved.</p>
+                                            </div>
+                                        </div>
+                                    </footer>
+
+                                    <!-- External JavaScript files -->
+                                    <!-- Bootstrap JS for interactive components -->
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+                                    <!-- Products JS for product management -->
+                                    <script src="/js/products.js"></script>
+
+                                    <!-- Product Page JavaScript - Handles interactions and filtering -->
+                                    <script>
+                                        /**
+                                         * Quick View Function - Opens product quick view modal
+                                         * @param {string} productId - The ID of the product to view
+                                         */
+                                        function quickView(productId) {
+                                            console.log('Quick view for product:', productId);
+                                            // Implement quick view modal
+                                        }
+
+                                        /**
+                                         * Compare Product Function - Adds product to comparison
+                                         * @param {string} productId - The ID of the product to compare
+                                         */
+                                        function compareProduct(productId) {
+                                            console.log('Compare product:', productId);
+                                            // Implement product comparison
+                                        }
+
+                                        /**
+                                         * Toggle Wishlist Function - Adds/removes product from wishlist
+                                         * @param {HTMLElement} btn - The wishlist button element
+                                         */
+                                        function toggleWishlist(btn) {
+                                            btn.classList.toggle('active');
+                                            const icon = btn.querySelector('i');
+                                            if (btn.classList.contains('active')) {
+                                                icon.classList.remove('far');
+                                                icon.classList.add('fas');
+                                            } else {
+                                                icon.classList.remove('fas');
+                                                icon.classList.add('far');
+                                            }
+                                        }
+
+                                        /**
+                                         * Set View Function - Toggles between grid and list view
+                                         * @param {string} viewType - The view type ('grid' or 'list')
+                                         */
+                                        function setView(viewType) {
+                                            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+                                            event.target.classList.add('active');
+
+                                            const grid = document.getElementById('productGrid');
+                                            if (viewType === 'list') {
+                                                grid.style.gridTemplateColumns = '1fr';
+                                            } else {
+                                                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+                                            }
+                                        }
+
+                                        /**
+                                         * Clear Filters Function - Resets all filter controls
+                                         */
+                                        function clearFilters() {
+                                            document.querySelectorAll('.form-check-input').forEach(cb => cb.checked = false);
+                                            document.getElementById('minPrice').value = '';
+                                            document.getElementById('maxPrice').value = '';
+                                            filterProducts();
+                                        }
+
+                                        /**
+                                         * Load More Products Function - Loads additional products
+                                         */
+                                        function loadMoreProducts() {
+                                            console.log('Loading more products...');
+                                            // Implement infinite scroll or load more functionality
+                                        }
+
+                                        /**
+                                         * Filter Products Function - Filters products based on selected criteria
+                                         */
+                                        function filterProducts() {
+                                            const cards = document.querySelectorAll('.product-card');
+                                            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+                                            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+
+                                            let visibleCount = 0;
+                                            cards.forEach(card => {
+                                                const price = parseFloat(card.dataset.price);
+                                                const category = card.dataset.category;
+
+                                                // Check category filters
+                                                const catPhone = document.getElementById('catPhone').checked;
+                                                const catLaptop = document.getElementById('catLaptop').checked;
+                                                const catWatch = document.getElementById('catWatch').checked;
+
+                                                let showByCategory = false;
+                                                if (category === 'phone' && catPhone) showByCategory = true;
+                                                if (category === 'computer' && catLaptop) showByCategory = true;
+                                                if (category === 'watch' && catWatch) showByCategory = true;
+
+                                                // Show/hide based on filters
+                                                if (price >= minPrice && price <= maxPrice && showByCategory) {
+                                                    card.style.display = 'block';
+                                                    visibleCount++;
+                                                } else {
+                                                    card.style.display = 'none';
+                                                }
+                                            });
+
+                                            document.getElementById('productCount').textContent = visibleCount;
+                                        }
+
+                                        // Add event listeners for filters
+                                        document.getElementById('minPrice').addEventListener('input', filterProducts);
+                                        document.getElementById('maxPrice').addEventListener('input', filterProducts);
+                                        document.querySelectorAll('.form-check-input').forEach(cb => {
+                                            cb.addEventListener('change', filterProducts);
+                                        });
+                                    </script>
+
+                                    <!-- Account Management Script -->
+                                    <script>
+                                        // Check if user is logged in on page load
+                                        function checkUserSession() {
+                                            const currentUser = sessionStorage.getItem('currentUser');
+                                            const accountNameSpan = document.getElementById('accountName');
+                                            const loginBtn = document.getElementById('loginBtn');
+                                            const logoutBtn = document.getElementById('logoutBtn');
+                                            const divider = document.getElementById('divider');
+
+                                            if (currentUser) {
+                                                const user = JSON.parse(currentUser);
+                                                accountNameSpan.textContent = user.name;
+                                                loginBtn.style.display = 'none';
+                                                logoutBtn.style.display = 'block';
+                                                divider.style.display = 'block';
+                                            } else {
+                                                accountNameSpan.textContent = 'Account';
+                                                loginBtn.style.display = 'block';
+                                                logoutBtn.style.display = 'none';
+                                                divider.style.display = 'none';
+                                            }
+                                        }
+
+                                        // Handle logout
+                                        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+                                            e.preventDefault();
+                                            sessionStorage.removeItem('currentUser');
+                                            localStorage.removeItem('rememberedUser');
+                                            window.location.href = 'login.html';
+                                        });
+
+                                        // Check session on page load
+                                        checkUserSession();
+
+                                        // Listen for storage changes (logout in other tabs)
+                                        window.addEventListener('storage', checkUserSession);
+                                    </script>
+</body>
+
+</html>
