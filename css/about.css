@@ -96,7 +96,7 @@
     width: 480px;
 }
 
-.about-btn button{
+.about-btn button {
     background-color: #ff8c00;
     width: 100px;
     height: 40px;
@@ -104,7 +104,8 @@
     border-radius: 15px;
     text-align: center;
 }
-.about-btn button:hover{
+
+.about-btn button:hover {
     background: #333;
     color: white;
     text-align: center;
@@ -131,20 +132,23 @@
     border-radius: 10px;
 
 }
-.teams{
+
+.teams {
     padding-top: 60px;
 }
-.title-team h3{
+
+.title-team h3 {
     text-align: center;
     font-size: 34px;
 }
-.title-team p{
+
+.title-team p {
     text-align: center;
-} 
+}
 
 
 .team-container {
-    
+
     max-width: 1200px;
     margin: auto;
     display: grid;
@@ -159,12 +163,12 @@
     overflow: hidden;
     position: relative;
     transition: 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .team-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .team-image {
@@ -238,30 +242,41 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-.customer{
+
+.customer {
     padding-top: 100px;
 }
-.customer h3{
+
+.customer h3 {
     text-align: center;
     font-size: 34px;
 }
-.partner{
+
+.partner {
     display: flex;
     justify-content: center;
-    gap: 90px;
-    margin-top: 25px;
-}
-.partner-img{
-    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 5px;
 }
 
-.partner-img img{
+.partner-img {
+    display: flex;
+    gap: 90px;
+    will-change: transform;
+
+}
+
+.partner-img img {
     width: 150px;
+    flex-shrink: 0;
 }
 
 
