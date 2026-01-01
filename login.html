@@ -1,59 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Meta tags for character encoding and responsive design -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <!-- Page title -->
+  <title>Login - WeShop Authentication</title>
+  <!-- External CSS files -->
   <link rel="stylesheet" href="./css/login.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Main container for the authentication interface -->
   <div class="container">
+    <!-- Container for both sign-in and sign-up forms -->
     <div class="forms-container">
       <div class="signin-signup">
 
-        <!-- Sign In Form -->
+        <!-- Sign In Form - User authentication -->
         <form id="sign-in-form" class="sign-in-form">
           <h2 class="title">Sign in</h2>
-          <div class="input-field"><i class="fas fa-envelope"></i><input type="text" placeholder="Username or Email" required></div>
-          <div class="input-field"><i class="fas fa-lock"></i><input type="password" placeholder="Password" required></div>
+          <!-- Username/Email input field with envelope icon -->
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Username or Email" required>
+          </div>
+          <!-- Password input field with lock icon -->
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" required>
+          </div>
+          <!-- Login submit button -->
           <input type="submit" value="Login" class="btn solid">
         </form>
 
-        <!-- Sign Up Form -->
+        <!-- Sign Up Form - New user registration -->
         <form id="sign-up-form" class="sign-up-form">
           <h2 class="title">Sign up</h2>
-          <div class="input-field"><i class="fas fa-user"></i><input type="text" id="signup-username" placeholder="Username" required></div>
-          <div class="input-field"><i class="fas fa-envelope"></i><input type="email" id="signup-email" placeholder="Email" required></div>
-          <div class="input-field"><i class="fas fa-lock"></i><input type="password" id="signup-password" placeholder="Password" required></div>
+          <!-- Username input field with user icon -->
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" id="signup-username" placeholder="Username" required>
+          </div>
+          <!-- Email input field with envelope icon -->
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="signup-email" placeholder="Email" required>
+          </div>
+          <!-- Password input field with lock icon -->
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="signup-password" placeholder="Password" required>
+          </div>
+          <!-- Registration submit button -->
           <input type="submit" value="Sign up" class="btn solid">
         </form>
 
       </div>
     </div>
 
+    <!-- Panels container for animated switching between forms -->
     <div class="panels-container">
+      <!-- Left panel - Encourages sign up -->
       <div class="panel left-panel">
         <div class="content">
           <h3>New here?</h3>
           <p>Create your account and join us today!</p>
+          <!-- Button to switch to sign-up form -->
           <button class="btn transparent" id="sign-up-btn">Sign up</button>
         </div>
-        <img src="img/undraw_empty-cart_574u.svg" class="image" alt="">
+        <!-- Decorative image for left panel -->
+        <img src="img/undraw_empty-cart_574u.svg" class="image" alt="Shopping cart illustration">
       </div>
+
+      <!-- Right panel - Encourages sign in -->
       <div class="panel right-panel">
         <div class="content">
           <h3>One of us?</h3>
           <p>Welcome back! Log in to continue.</p>
+          <!-- Button to switch to sign-in form -->
           <button class="btn transparent" id="sign-in-btn">Sign in</button>
         </div>
-        <img src="img/undraw_stripe-payments_jxnn.svg" class="image" alt="">
+        <!-- Decorative image for right panel -->
+        <img src="img/undraw_stripe-payments_jxnn.svg" class="image" alt="Payment illustration">
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- JavaScript files for functionality -->
+  <!-- Panel animation script for switching between forms -->
   <script src="js/panel-animation.js"></script>
+  <!-- Local authentication script for form handling -->
   <script src="js/auth-local.js"></script>
 </body>
+
 </html>

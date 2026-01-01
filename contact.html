@@ -2,630 +2,38 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization -->
     <title>Contact WeShop - Get in Touch</title>
-    <!-- Bootstrap CSS -->
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons for additional icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #ffd700;
-            --secondary-color: #ff8c00;
-            --dark-color: #1a1a1a;
-            --light-color: #f8f9fa;
-        }
+    <!-- Custom CSS styles -->
+    <link rel="stylesheet" href="css/contact.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .navbar-brand i {
-            margin-right: 0.5rem;
-        }
-
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-
-        .dropdown-menu {
-            background: #2a2a2a;
-            border: none;
-        }
-
-        .dropdown-item {
-            color: #fff;
-            transition: background 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-color);
-            color: #fff;
-            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
-        }
-
-        .btn-outline-success {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-outline-success:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-outline-primary:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .form-control option {
-            background: var(--dark-color);
-            color: white;
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--dark-color);
-            border: none;
-            padding: 1rem 2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.3s ease;
-            width: 100%;
-        }
-
-        .btn-submit:hover {
-            transform: scale(1.05);
-            color: var(--dark-color);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
-            color: white;
-            padding: 100px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('img/shop1.webp') center/cover;
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .stat-item p {
-            margin: 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Contact Info Section */
-        .contact-info-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--primary-color);
-        }
-
-        .info-icon {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--dark-color);
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .info-card:hover .info-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-
-        .info-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* Contact Form Section */
-        .contact-form-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
-            color: white;
-        }
-
-        .form-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-container h2 {
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-control,
-        .form-select {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 1rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-control:focus,
-        .form-select:focus {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
-        }
-
-        .form-control option {
-            background: var(--dark-color);
-            color: white;
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--dark-color);
-            border: none;
-            padding: 1rem 2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-submit::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-submit:hover::before {
-            left: 100%;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-            color: var(--dark-color);
-        }
-
-        /* Map Section */
-        .map-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            height: 450px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: relative;
-        }
-
-        .map-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-15267793328-1f94c2cbb5b5?w=1200&h=600&fit=crop') center/cover;
-            opacity: 0.3;
-            z-index: 1;
-        }
-
-        .map-container>div {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .map-container h4 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .map-container p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .faq-card {
-            background: white;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-card:hover {
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .faq-header {
-            padding: 1.5rem 2rem;
-            background: white;
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-weight: 600;
-            color: var(--dark-color);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .faq-header::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
-        }
-
-        .faq-header:hover::before {
-            width: 100%;
-        }
-
-        .faq-header:hover {
-            background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.1));
-        }
-
-        .faq-header .icon {
-            transition: transform 0.3s ease;
-            color: var(--primary-color);
-        }
-
-        .faq-header.active .icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-body {
-            padding: 0 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .faq-body.active {
-            padding: 1rem 2rem 1.5rem;
-            max-height: 300px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-color);
-            color: #fff;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .footer-link {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            text-align: center;
-            color: #999;
-        }
-        .search-input{
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 6px 12px;
-            color: white;
-            margin-right: 10px;
-        }
-        .search-input::placeholder {
-            color: #bbb;
-        }
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .form-container {
-                padding: 2rem;
-            }
-
-            .info-card {
-                margin-bottom: 2rem;
-            }
-        }
-
-        /* Touch device improvements */
-        @media (hover: none) and (pointer: coarse) {
-
-            .info-card:hover,
-            .faq-card:hover,
-            .btn-submit:hover {
-                transform: none;
-            }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar - Main site navigation with user account and cart -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
+            <!-- Brand logo linking to home -->
             <a class="navbar-brand" href="dashboard.html">
                 <i class="bi bi-bing"></i>
                 WESHOP
             </a>
+            <!-- Mobile navigation toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navigation menu items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -634,6 +42,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="product.html">Shop</a>
                     </li>
+                    <!-- Collections dropdown menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -653,18 +62,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+                    <!-- Active page indicator -->
                     <li class="nav-item">
                         <a class="nav-link active" href="contact.html">Contact</a>
                     </li>
                 </ul>
+                <!-- Search, account, and cart controls -->
                 <div class="d-flex gap-2 ms-3">
+                    <!-- Search form -->
                     <form class="d-flex">
-                        <input class="search-input" type="search" placeholder="Search products..."
-                            aria-label="Search">
+                        <input class="search-input" type="search" placeholder="Search products..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
+                    <!-- Account dropdown -->
                     <div class="dropdown">
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -682,6 +94,7 @@
                                         class="bi bi-box-arrow-right"></i> Logout</button></li>
                         </ul>
                     </div>
+                    <!-- Shopping cart button with item count -->
                     <button class="btn btn-outline-primary">
                         <i class="bi bi-cart-fill"></i>
                         <span class="badge bg-danger" id="cartCount">0</span>
@@ -691,42 +104,66 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Main contact page banner with statistics -->
     <section class="hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1>Get in <span style="color: var(--primary-color);">Touch</span></h1>
-                <p>We're here to help you find the perfect electronics. Reach out to us with any questions, concerns, or
-                    feedback.</p>
-                <div class="hero-stats d-flex justify-content-center gap-4">
-                    <div class="stat-item">
-                        <h3 style="color: var(--primary-color); font-weight: bold;">24/7</h3>
-                        <p class="mb-0">Support Available</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 style="color: var(--primary-color); font-weight: bold;">
-                            < 1hr</h3>
+            <div class="row align-items-center min-vh-100">
+                <!-- Hero content with company information -->
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <!-- Company establishment badge -->
+                        <div class="badge bg-warning text-dark mb-3">24/7 Support</div>
+                        <!-- Main heading with brand highlight -->
+                        <h1 class="display-3 fw-bold mb-4">Get in <span class="text-warning">Touch</span></h1>
+                        <!-- Company description -->
+                        <p class="lead mb-4">We're here to help you find perfect electronics. Reach out to us with any
+                            questions, concerns, or feedback.</p>
+                        <!-- Company statistics -->
+                        <div class="hero-stats d-flex gap-4 mb-4">
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">1hr</h3>
                                 <p class="mb-0">Response Time</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">100%</h3>
+                                <p class="mb-0">Satisfaction</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="text-warning fw-bold">24/7</h3>
+                                <p class="mb-0">Support</p>
+                            </div>
+                        </div>
+                        <!-- Call-to-action buttons -->
+                        <div class="hero-buttons d-flex gap-3">
+                            <a href="#contact-form" class="btn btn-warning btn-lg">Send Message</a>
+                            <a href="#map-section" class="btn btn-outline-warning btn-lg">Visit Store</a>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3 style="color: var(--primary-color); font-weight: bold;">100%</h3>
-                        <p class="mb-0">Satisfaction</p>
+                </div>
+                <!-- Hero image -->
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+                            alt="Contact Us" class="img-fluid rounded-3 shadow">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Info Section -->
+    <!-- Contact Info Section - Multiple contact methods display -->
     <section class="contact-info-section">
         <div class="container">
+            <!-- Section header -->
             <div class="row text-center mb-5">
                 <div class="col-lg-12">
                     <h2 class="display-5 fw-bold mb-3">How to Reach Us</h2>
                     <p class="lead text-muted">Multiple ways to get in touch with our team</p>
                 </div>
             </div>
+            <!-- Contact method cards -->
             <div class="row g-4">
+                <!-- Contact method 1: Phone Support -->
                 <div class="col-lg-4 col-md-6">
                     <div class="info-card">
                         <div class="info-icon">
@@ -738,6 +175,7 @@
                             Sat-Sun: 10AM-4PM EST</p>
                     </div>
                 </div>
+                <!-- Contact method 2: Email Support -->
                 <div class="col-lg-4 col-md-6">
                     <div class="info-card">
                         <div class="info-icon">
@@ -749,6 +187,7 @@
                             Response within 1 hour</p>
                     </div>
                 </div>
+                <!-- Contact method 3: Physical Store -->
                 <div class="col-lg-4 col-md-6">
                     <div class="info-card">
                         <div class="info-icon">
@@ -764,14 +203,17 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Form Section - User message submission form -->
     <section class="contact-form-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="form-container">
+                        <!-- Form heading -->
                         <h2 class="text-center mb-4">Send Us a Message</h2>
+                        <!-- Contact form -->
                         <form id="contactForm">
+                            <!-- Name fields row -->
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -788,6 +230,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Contact fields row -->
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -804,6 +247,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Subject selection -->
                             <div class="form-group">
                                 <label for="subject">Subject *</label>
                                 <select class="form-select" id="subject" name="subject" required>
@@ -816,11 +260,13 @@
                                     <option value="partnership">Partnership</option>
                                 </select>
                             </div>
+                            <!-- Message textarea -->
                             <div class="form-group">
                                 <label for="message">Message *</label>
                                 <textarea class="form-control" id="message" name="message" rows="5" required
                                     placeholder="Tell us how we can help you..."></textarea>
                             </div>
+                            <!-- Newsletter opt-in -->
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="newsletter">
@@ -829,6 +275,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <!-- Submit button -->
                             <button type="submit" class="btn btn-submit">
                                 <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
@@ -842,20 +289,24 @@
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
+            <!-- Section header -->
             <div class="row text-center mb-5">
                 <div class="col-lg-12">
                     <h2 class="display-5 fw-bold mb-3">Visit Our Store</h2>
                     <p class="lead text-muted">Come see our latest collection in person</p>
                 </div>
             </div>
+            <!-- Map container -->
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="map-container">
                         <div class="text-center">
+                            <!-- Map icon -->
                             <i class="fas fa-map-marked-alt fa-3x mb-3 text-muted"></i>
                             <h4>Interactive Map</h4>
-
+                            <!-- Store address -->
                             <p>123 Tech Street, Silicon Valley, CA 94025</p>
+                            <!-- Placeholder note for production -->
                             <p class="small text-muted">Map integration would go here in production</p>
                         </div>
                     </div>
@@ -864,64 +315,76 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Frequently Asked Questions -->
     <section class="faq-section">
         <div class="container">
+            <!-- Section header -->
             <div class="row text-center mb-5">
                 <div class="col-lg-12">
                     <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
                     <p class="lead text-muted">Quick answers to common questions</p>
                 </div>
             </div>
+            <!-- FAQ items -->
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <!-- FAQ 1: Payment Methods -->
                     <div class="faq-card">
                         <button class="faq-header" onclick="toggleFAQ(this)">
                             <span>What payment methods do you accept?</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
                         <div class="faq-body">
-                            <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay,
+                            <p>We accept all major credit cards (Visa, MasterCard, American Express),
+                                PayPal, Apple Pay,
                                 Google Pay, and cryptocurrency payments (Bitcoin, Ethereum).</p>
                         </div>
                     </div>
+                    <!-- FAQ 2: Shipping Time -->
                     <div class="faq-card">
                         <button class="faq-header" onclick="toggleFAQ(this)">
                             <span>How long does shipping take?</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
                         <div class="faq-body">
-                            <p>Standard shipping takes 5-7 business days. Express shipping (2-3 business days) and
+                            <p>Standard shipping takes 5-7 business days. Express shipping (2-3 business
+                                days) and
                                 overnight shipping options are available at checkout.</p>
                         </div>
                     </div>
+                    <!-- FAQ 3: Return Policy -->
                     <div class="faq-card">
                         <button class="faq-header" onclick="toggleFAQ(this)">
                             <span>What is your return policy?</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
                         <div class="faq-body">
-                            <p>We offer a 30-day money-back guarantee on all products. Items must be in original
+                            <p>We offer a 30-day money-back guarantee on all products. Items must be in
+                                original
                                 condition with all accessories included.</p>
                         </div>
                     </div>
+                    <!-- FAQ 4: International Shipping -->
                     <div class="faq-card">
                         <button class="faq-header" onclick="toggleFAQ(this)">
                             <span>Do you offer international shipping?</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
                         <div class="faq-body">
-                            <p>Yes, we ship to over 50 countries worldwide. International shipping rates and delivery
+                            <p>Yes, we ship to over 50 countries worldwide. International shipping rates
+                                and delivery
                                 times vary by location.</p>
                         </div>
                     </div>
+                    <!-- FAQ 5: Order Tracking -->
                     <div class="faq-card">
                         <button class="faq-header" onclick="toggleFAQ(this)">
                             <span>How can I track my order?</span>
                             <i class="fas fa-chevron-down icon"></i>
                         </button>
                         <div class="faq-body">
-                            <p>Once your order ships, you'll receive a tracking number via email. You can also track
+                            <p>Once your order ships, you'll receive a tracking number via email. You
+                                can also track
                                 your order in your account dashboard.</p>
                         </div>
                     </div>
@@ -930,14 +393,16 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Site footer with links and information -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4 mb-4">
+                <!-- Footer column 1: Brand information -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">WESHOP</h5>
                     <p>Your trusted partner for premium electronics and smart devices.</p>
                 </div>
+                <!-- Footer column 2: Quick navigation links -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Quick Links</h5>
                     <ul class="list-unstyled">
@@ -947,6 +412,7 @@
                         <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
+                <!-- Footer column 3: Customer service links -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Customer Service</h5>
                     <ul class="list-unstyled">
@@ -956,9 +422,11 @@
                         <li><a href="#" class="footer-link">Warranty</a></li>
                     </ul>
                 </div>
+                <!-- Footer column 4: Social media -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Connect With Us</h5>
                     <p>Follow us on social media for updates and exclusive offers</p>
+                    <!-- Social media icons -->
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -967,32 +435,41 @@
                     </div>
                 </div>
             </div>
+            <!-- Footer bottom section with copyright -->
             <div class="footer-bottom">
                 <p>&copy; 2025 WESHOP. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- External JavaScript files -->
+    <!-- Bootstrap JS for interactive components -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Contact Form Script -->
+    <!-- Contact Form Script - Handles form submission and user session -->
     <script>
-        // Check if user is logged in on page load
+        /**
+         * Check if user is logged in on page load
+         * Updates UI based on authentication status
+         */
         function checkUserSession() {
+            // Get current user from sessionStorage
             const currentUser = sessionStorage.getItem('currentUser');
+            // Get DOM elements for UI updates
             const accountNameSpan = document.getElementById('accountName');
             const loginBtn = document.getElementById('loginBtn');
             const logoutBtn = document.getElementById('logoutBtn');
             const divider = document.getElementById('divider');
 
             if (currentUser) {
+                // User is logged in - show user info and logout button
                 const user = JSON.parse(currentUser);
                 accountNameSpan.textContent = user.name;
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'block';
                 divider.style.display = 'block';
             } else {
+                // User is not logged in - show login button
                 accountNameSpan.textContent = 'Account';
                 loginBtn.style.display = 'block';
                 logoutBtn.style.display = 'none';
@@ -1000,11 +477,17 @@
             }
         }
 
-        // Handle logout
+        /**
+         * Handle user logout
+         * Clears session data and redirects to login page
+         */
         document.getElementById('logoutBtn').addEventListener('click', (e) => {
             e.preventDefault();
+            // Clear session storage
             sessionStorage.removeItem('currentUser');
+            // Clear remembered user data
             localStorage.removeItem('rememberedUser');
+            // Redirect to login page
             window.location.href = 'login.html';
         });
 
@@ -1014,7 +497,10 @@
         // Listen for storage changes (logout in other tabs)
         window.addEventListener('storage', checkUserSession);
 
-        // FAQ Toggle Function
+        /**
+         * FAQ Toggle Function
+         * Handles expanding/collapsing FAQ items
+         */
         function toggleFAQ(header) {
             const body = header.nextElementSibling;
             const isActive = header.classList.contains('active');
@@ -1032,7 +518,10 @@
             }
         }
 
-        // Contact Form Handler
+        /**
+         * Contact Form Handler
+         * Processes form submission and displays success message
+         */
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 

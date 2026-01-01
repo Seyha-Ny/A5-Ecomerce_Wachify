@@ -2,449 +2,48 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization -->
     <title>Shop Premium Electronics - WeShop</title>
-    <!-- Bootstrap CSS -->
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons for additional icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
+    <!-- Custom CSS files -->
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/feedback.css">
-    <style>
-        /* Additional Modern Styles */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.7) 100%);
-            z-index: 1;
-        }
-
-        .floating-cards {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 1rem;
-            color: white;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            backdrop-filter: blur(10px);
-        }
-
-        .advanced-filters {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .filter-section {
-            margin-bottom: 2rem;
-        }
-
-        .filter-section h5 {
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-
-        .price-range {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .price-range input {
-            flex: 1;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--primary-color);
-            color: var(--dark-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            z-index: 3;
-        }
-
-        .product-image {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-            background: #f8f9fa;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-
-        .quick-actions {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            display: flex;
-            gap: 0.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .product-card:hover .quick-actions {
-            opacity: 1;
-        }
-
-        .quick-action-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .quick-action-btn:hover {
-            transform: scale(1.1);
-            background: var(--primary-color);
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-        }
-
-        .product-subtitle {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stars {
-            color: var(--primary-color);
-        }
-
-        .rating-count {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .product-price {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .current-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .original-price {
-            font-size: 1rem;
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .add-to-cart-btn {
-            flex: 1;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--dark-color);
-            border: none;
-            padding: 0.75rem;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .add-to-cart-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .wishlist-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .wishlist-btn:hover {
-            border-color: var(--danger-color);
-            color: var(--danger-color);
-        }
-
-        .wishlist-btn.active {
-            background: var(--danger-color);
-            border-color: var(--danger-color);
-            color: white;
-        }
-
-        .view-toggle {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .view-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid #e9ecef;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .view-btn.active {
-            background: var(--primary-color);
-            color: var(--dark-color);
-            border-color: var(--primary-color);
-        }
-
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
-            }
-
-            100% {
-                background-position: -200% 0;
-            }
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .navbar-brand i {
-            margin-right: 0.5rem;
-        }
-
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-
-        .dropdown-menu {
-            background: #2a2a2a;
-            border: none;
-        }
-
-        .dropdown-item {
-            color: #fff;
-            transition: background 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-color);
-            color: #fff;
-            box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
-        }
-
-        .btn-outline-success {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-outline-success:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-outline-primary:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar - Main site navigation with user account and cart -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
+            <!-- Brand logo linking to home -->
             <a class="navbar-brand" href="dashboard.html">
                 <i class="bi bi-bing"></i>
                 WESHOP
             </a>
+            <!-- Mobile navigation toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navigation menu items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item">
+                        <!-- Active page indicator -->
                         <a class="nav-link active" href="product.html">Shop</a>
                     </li>
+                    <!-- Collections dropdown menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="collectionsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -452,7 +51,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
                             <li><a class="dropdown-item" href="collections/phones.html"><i class="bi bi-phone"></i>
-                                    Smart Phone</a></li>
+                                    Smart
+                                    Phone</a></li>
                             <li><a class="dropdown-item" href="collections/watches.html"><i
                                         class="bi bi-smartwatch"></i>
                                     Smart Watch</a></li>
@@ -467,7 +67,9 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
+                <!-- Search, account, and cart controls -->
                 <div class="d-flex gap-2 ms-3">
+                    <!-- Search form -->
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search products..."
                             aria-label="Search">
@@ -475,6 +77,7 @@
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
+                    <!-- Account dropdown -->
                     <div class="dropdown">
                         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -492,6 +95,7 @@
                                         class="bi bi-box-arrow-right"></i> Logout</button></li>
                         </ul>
                     </div>
+                    <!-- Shopping cart button with item count -->
                     <button class="btn btn-outline-primary">
                         <i class="bi bi-cart-fill"></i>
                         <span class="badge bg-danger" id="cartCount">0</span>
@@ -501,9 +105,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Main product page banner with trust badges -->
     <section class="hero-section" style="position: relative; min-height: 60vh; display: flex; align-items: center;">
+        <!-- Hero overlay for text visibility -->
         <div class="hero-overlay"></div>
+        <!-- Floating cards container (currently commented out) -->
         <div class="floating-cards">
             <!-- <div class="floating-card">
                 <i class="fas fa-shipping-fast me-2"></i>
@@ -518,21 +124,28 @@
                 <span>Premium Quality</span>
             </div> -->
         </div>
+        <!-- Hero content container -->
         <div class="container text-center" style="position: relative; z-index: 3;">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <!-- Main heading -->
                     <h1 class="display-3 fw-bold mb-4 text-white">Premium Electronics Collection</h1>
+                    <!-- Hero description -->
                     <p class="lead mb-4 text-white">Discover cutting-edge technology with our curated selection of
                         smartphones, laptops, and smartwatches</p>
+                    <!-- Trust badges showing company guarantees -->
                     <div class="trust-badges">
+                        <!-- Trust badge 1: Authentic Products -->
                         <div class="trust-badge">
                             <i class="fas fa-check-circle text-warning"></i>
                             <span class="text-white">Authentic Products</span>
                         </div>
+                        <!-- Trust badge 2: Fast Delivery -->
                         <div class="trust-badge">
                             <i class="fas fa-truck text-warning"></i>
                             <span class="text-white">Fast Delivery</span>
                         </div>
+                        <!-- Trust badge 3: 24/7 Support -->
                         <div class="trust-badge">
                             <i class="fas fa-headset text-warning"></i>
                             <span class="text-white">24/7 Support</span>
@@ -541,41 +154,52 @@
                 </div>
             </div>
         </div>
+        <!-- Hero background image -->
         <img src="./img/shop1.webp" alt="Hero Background"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
     </section>
 
-    <!-- Advanced Filters Section -->
+    <!-- Advanced Filters Section - Product filtering options -->
     <section class="container my-5">
         <div class="row">
+            <!-- Filters column -->
             <div class="col-lg-3">
                 <div class="advanced-filters">
+                    <!-- Filters heading -->
                     <h4 class="mb-4">Filters</h4>
 
+                    <!-- Price Range Filter -->
                     <div class="filter-section">
                         <h5>Price Range</h5>
                         <div class="price-range">
+                            <!-- Minimum price input -->
                             <input type="number" class="form-control" placeholder="Min" id="minPrice">
                             <span>-</span>
+                            <!-- Maximum price input -->
                             <input type="number" class="form-control" placeholder="Max" id="maxPrice">
                         </div>
+                        <!-- Price range slider -->
                         <input type="range" class="form-range mt-2" min="0" max="2000" id="priceSlider">
                     </div>
 
+                    <!-- Categories Filter -->
                     <div class="filter-section">
                         <h5>Categories</h5>
+                        <!-- Smart Phones checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="catPhone" checked>
                             <label class="form-check-label" for="catPhone">
                                 Smart Phones (5)
                             </label>
                         </div>
+                        <!-- Laptops checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="catLaptop" checked>
                             <label class="form-check-label" for="catLaptop">
                                 Laptops (5)
                             </label>
                         </div>
+                        <!-- Smart Watches checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="catWatch" checked>
                             <label class="form-check-label" for="catWatch">
@@ -584,20 +208,24 @@
                         </div>
                     </div>
 
+                    <!-- Brand Filter -->
                     <div class="filter-section">
                         <h5>Brand</h5>
+                        <!-- Apple checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="brandApple">
                             <label class="form-check-label" for="brandApple">
                                 Apple
                             </label>
                         </div>
+                        <!-- Samsung checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="brandSamsung">
                             <label class="form-check-label" for="brandSamsung">
                                 Samsung
                             </label>
                         </div>
+                        <!-- Google checkbox -->
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="brandGoogle">
                             <label class="form-check-label" for="brandGoogle">
@@ -606,8 +234,10 @@
                         </div>
                     </div>
 
+                    <!-- Rating Filter -->
                     <div class="filter-section">
                         <h5>Rating</h5>
+                        <!-- 4 stars and up radio button -->
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="rating" id="rating4">
                             <label class="form-check-label" for="rating4">
@@ -618,6 +248,7 @@
                                 & Up
                             </label>
                         </div>
+                        <!-- 3 stars and up radio button -->
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="rating" id="rating3">
                             <label class="form-check-label" for="rating3">
@@ -629,23 +260,31 @@
                         </div>
                     </div>
 
+                    <!-- Clear filters button -->
                     <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">Clear All Filters</button>
                 </div>
             </div>
 
+            <!-- Products column -->
             <div class="col-lg-9">
-                <!-- View Toggle and Sort -->
+                <!-- View Toggle and Sort controls -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
+                    <!-- View toggle buttons (Grid/List) -->
                     <div class="view-toggle">
+                        <!-- Grid view button (active) -->
                         <button class="view-btn active" onclick="setView('grid')">
                             <i class="fas fa-th"></i> Grid
                         </button>
+                        <!-- List view button -->
                         <button class="view-btn" onclick="setView('list')">
                             <i class="fas fa-list"></i> List
                         </button>
                     </div>
+                    <!-- Product count and sort dropdown -->
                     <div class="d-flex align-items-center gap-3">
+                        <!-- Product count display -->
                         <span class="text-muted">Showing <span id="productCount">15</span> products</span>
+                        <!-- Sort dropdown -->
                         <select class="form-select" style="width: auto;">
                             <option>Sort by: Featured</option>
                             <option>Price: Low to High</option>
@@ -656,25 +295,35 @@
                     </div>
                 </div>
 
-                <!-- Product Grid -->
+                <!-- Product Grid Container -->
                 <div class="product-grid" id="productGrid">
-                    <!-- Product Card 1 -->
+                    <!-- Product Card 1: Google Pixel 8 Pro -->
                     <div class="product-card" data-category="phone" data-price="599">
+                        <!-- Product badge -->
                         <div class="product-badge">New</div>
+                        <!-- Product image container -->
                         <div class="product-image">
+                            <!-- Quick action buttons -->
                             <div class="quick-actions">
+                                <!-- Quick view button -->
                                 <button class="quick-action-btn" onclick="quickView('pixel01')">
                                     <i class="fas fa-eye"></i>
                                 </button>
+                                <!-- Compare button -->
                                 <button class="quick-action-btn" onclick="compareProduct('pixel01')">
                                     <i class="fas fa-balance-scale"></i>
                                 </button>
                             </div>
+                            <!-- Product image -->
                             <img src="/img/menu9.png" alt="Google Pixel">
                         </div>
+                        <!-- Product information -->
                         <div class="product-info">
+                            <!-- Product title -->
                             <h3 class="product-title">Google Pixel 8 Pro</h3>
+                            <!-- Product subtitle -->
                             <p class="product-subtitle">Latest flagship with AI camera</p>
+                            <!-- Product rating -->
                             <div class="product-rating">
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
@@ -683,337 +332,314 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
+                                <!-- Rating count -->
                                 <span class="rating-count">(234)</span>
                             </div>
+                            <!-- Product price -->
                             <div class="product-price">
                                 <span class="current-price">$599</span>
                                 <span class="original-price">$799</span>
                             </div>
+                            <!-- Product action buttons -->
                             <div class="product-actions">
+                                <!-- Add to cart button -->
                                 <button class="add-to-cart-btn"
                                     onclick="addToCart('pixel01', 'Google Pixel 8 Pro', 599, '/img/menu9.png')">
                                     <i class="fas fa-shopping-cart me-2"></i>Add to Cart
                                 </button>
+                                <!-- Wishlist button -->
                                 <button class="wishlist-btn" onclick="toggleWishlist(this)">
                                     <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Product Card 2 -->
-                    <div class="product-card" data-category="watch" data-price="899">
-                        <div class="product-badge">Bestseller</div>
-                        <div class="product-image">
-                            <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="quickView('blackwatch01')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="quick-action-btn" onclick="compareProduct('blackwatch01')">
-                                    <i class="fas fa-balance-scale"></i>
-                                </button>
-                            </div>
-                            <img src="/img/menu1.png" alt="Black Watch">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Premium Black Watch</h3>
-                            <p class="product-subtitle">Classic elegance meets modern tech</p>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(512)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">$899</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart-btn"
-                                    onclick="addToCart('blackwatch01', 'Premium Black Watch', 899, '/img/menu1.png')">
-                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                                </button>
-                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                                    <!-- Categories Filter -->
+                                    <div class="filter-section">
+                                        <h5>Categories</h5>
+                                        <!-- Smart Phones checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catPhone" checked>
+                                            <label class="form-check-label" for="catPhone">
+                                                Smart Phones (5)
+                                            </label>
+                                        </div>
+                                        <!-- Laptops checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catLaptop" checked>
+                                            <label class="form-check-label" for="catLaptop">
+                                                Laptops (5)
+                                            </label>
+                                        </div>
+                                        <!-- Smart Watches checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="catWatch" checked>
+                                            <label class="form-check-label" for="catWatch">
+                                                Smart Watches (5)
+                                            </label>
+                                        </div>
+                                    </div>
 
-                    <!-- Product Card 3 -->
-                    <div class="product-card" data-category="computer" data-price="1199">
-                        <div class="product-badge">Gaming</div>
-                        <div class="product-image">
-                            <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="quickView('strixg16')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="quick-action-btn" onclick="compareProduct('strixg16')">
-                                    <i class="fas fa-balance-scale"></i>
-                                </button>
-                            </div>
-                            <img src="/img/menu3.png" alt="Gaming Laptop">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">ROG Strix G16</h3>
-                            <p class="product-subtitle">Ultimate gaming machine</p>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-count">(189)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">$1,199</span>
-                                <span class="original-price">$1,499</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart-btn"
-                                    onclick="addToCart('strixg16', 'ROG Strix G16', 1199, '/img/menu3.png')">
-                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                                </button>
-                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                                    <!-- Brand Filter -->
+                                    <div class="filter-section">
+                                        <h5>Brand</h5>
+                                        <!-- Apple checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandApple">
+                                            <label class="form-check-label" for="brandApple">
+                                                Apple
+                                            </label>
+                                        </div>
+                                        <!-- Samsung checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandSamsung">
+                                            <label class="form-check-label" for="brandSamsung">
+                                                Samsung
+                                            </label>
+                                        </div>
+                                        <!-- Google checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="brandGoogle">
+                                            <label class="form-check-label" for="brandGoogle">
+                                                Google
+                                            </label>
+                                        </div>
+                                    </div>
 
-                    <!-- Add more product cards as needed -->
-                    <div class="product-card" data-category="phone" data-price="699">
-                        <div class="product-badge">Popular</div>
-                        <div class="product-image">
-                            <div class="quick-actions">
-                                <button class="quick-action-btn" onclick="quickView('iphone17')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="quick-action-btn" onclick="compareProduct('iphone17')">
-                                    <i class="fas fa-balance-scale"></i>
-                                </button>
-                            </div>
-                            <img src="/img/menu5.png" alt="iPhone">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">iPhone 17 Pro Max</h3>
-                            <p class="product-subtitle">Apple's latest innovation</p>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(1,234)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">$699</span>
-                                <span class="original-price">$999</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="add-to-cart-btn"
-                                    onclick="addToCart('iphone17', 'iPhone 17 Pro Max', 699, '/img/menu5.png')">
-                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                                </button>
-                                <button class="wishlist-btn" onclick="toggleWishlist(this)">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    <!-- Rating Filter -->
+                                    <div class="filter-section">
+                                        <h5>Rating</h5>
+                                        <!-- 4 stars and up radio button -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating4">
+                                            <label class="form-check-label" for="rating4">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                & Up
+                                            </label>
+                                        </div>
+                                        <!-- 3 stars and up radio button -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating3">
+                                            <label class="form-check-label" for="rating3">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                & Up
+                                            </label>
+                                        </div>
+                                    </div>
 
-                <!-- Load More -->
-                <div class="text-center mt-5">
-                    <button class="btn btn-outline-primary btn-lg" onclick="loadMoreProducts()">
-                        <i class="fas fa-plus me-2"></i>Load More Products
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+                                    <!-- Clear filters button -->
+                                    <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">Clear All
+                                        Filters</button>
+                                    <footer class="footer">
+                                        <div class="container">
+                                            <div class="row g-4 mb-4">
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">WESHOP</h5>
+                                                    <p>Your trusted partner for premium electronics and smart devices.
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Quick Links</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
+                                                        <li><a href="product.html" class="footer-link">Shop</a></li>
+                                                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                                                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Customer Service</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="#" class="footer-link">Track Order</a></li>
+                                                        <li><a href="#" class="footer-link">Returns</a></li>
+                                                        <li><a href="#" class="footer-link">FAQ</a></li>
+                                                        <li><a href="#" class="footer-link">Warranty</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Footer column 4: Social media -->
+                                                <div class="col-lg-3 col-md-6">
+                                                    <h5 class="footer-title">Connect With Us</h5>
+                                                    <p>Follow us on social media for updates and exclusive offers</p>
+                                                    <!-- Social media icons -->
+                                                    <div class="social-icons">
+                                                        <a href="#" aria-label="Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                        <a href="#" aria-label="Instagram"><i
+                                                                class="fab fa-instagram"></i></a>
+                                                        <a href="#" aria-label="Twitter"><i
+                                                                class="fab fa-twitter"></i></a>
+                                                        <a href="#" aria-label="YouTube"><i
+                                                                class="fab fa-youtube"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Footer bottom section with copyright -->
+                                            <div class="footer-bottom">
+                                                <p>&copy; 2025 WESHOP. All rights reserved.</p>
+                                            </div>
+                                        </div>
+                                    </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">WESHOP</h5>
-                    <p>Your trusted partner for premium electronics and smart devices.</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="dashboard.html" class="footer-link">Home</a></li>
-                        <li><a href="product.html" class="footer-link">Shop</a></li>
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Customer Service</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="footer-link">Track Order</a></li>
-                        <li><a href="#" class="footer-link">Returns</a></li>
-                        <li><a href="#" class="footer-link">FAQ</a></li>
-                        <li><a href="#" class="footer-link">Warranty</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Connect With Us</h5>
-                    <p>Follow us on social media for updates and exclusive offers</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 WESHOP. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+                                    <!-- External JavaScript files -->
+                                    <!-- Bootstrap JS for interactive components -->
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+                                    <!-- Products JS for product management -->
+                                    <script src="/js/products.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/products.js"></script>
+                                    <!-- Product Page JavaScript - Handles interactions and filtering -->
+                                    <script>
+                                        /**
+                                         * Quick View Function - Opens product quick view modal
+                                         * @param {string} productId - The ID of the product to view
+                                         */
+                                        function quickView(productId) {
+                                            console.log('Quick view for product:', productId);
+                                            // Implement quick view modal
+                                        }
 
-    <script>
-        // Additional functionality for the new product page
-        function quickView(productId) {
-            console.log('Quick view for product:', productId);
-            // Implement quick view modal
-        }
+                                        /**
+                                         * Compare Product Function - Adds product to comparison
+                                         * @param {string} productId - The ID of the product to compare
+                                         */
+                                        function compareProduct(productId) {
+                                            console.log('Compare product:', productId);
+                                            // Implement product comparison
+                                        }
 
-        function compareProduct(productId) {
-            console.log('Compare product:', productId);
-            // Implement product comparison
-        }
+                                        /**
+                                         * Toggle Wishlist Function - Adds/removes product from wishlist
+                                         * @param {HTMLElement} btn - The wishlist button element
+                                         */
+                                        function toggleWishlist(btn) {
+                                            btn.classList.toggle('active');
+                                            const icon = btn.querySelector('i');
+                                            if (btn.classList.contains('active')) {
+                                                icon.classList.remove('far');
+                                                icon.classList.add('fas');
+                                            } else {
+                                                icon.classList.remove('fas');
+                                                icon.classList.add('far');
+                                            }
+                                        }
 
-        function toggleWishlist(btn) {
-            btn.classList.toggle('active');
-            const icon = btn.querySelector('i');
-            if (btn.classList.contains('active')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-            }
-        }
+                                        /**
+                                         * Set View Function - Toggles between grid and list view
+                                         * @param {string} viewType - The view type ('grid' or 'list')
+                                         */
+                                        function setView(viewType) {
+                                            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+                                            event.target.classList.add('active');
 
-        function setView(viewType) {
-            document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+                                            const grid = document.getElementById('productGrid');
+                                            if (viewType === 'list') {
+                                                grid.style.gridTemplateColumns = '1fr';
+                                            } else {
+                                                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+                                            }
+                                        }
 
-            const grid = document.getElementById('productGrid');
-            if (viewType === 'list') {
-                grid.style.gridTemplateColumns = '1fr';
-            } else {
-                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-            }
-        }
+                                        /**
+                                         * Clear Filters Function - Resets all filter controls
+                                         */
+                                        function clearFilters() {
+                                            document.querySelectorAll('.form-check-input').forEach(cb => cb.checked = false);
+                                            document.getElementById('minPrice').value = '';
+                                            document.getElementById('maxPrice').value = '';
+                                            filterProducts();
+                                        }
 
-        function clearFilters() {
-            document.querySelectorAll('.form-check-input').forEach(cb => cb.checked = false);
-            document.getElementById('minPrice').value = '';
-            document.getElementById('maxPrice').value = '';
-            filterProducts();
-        }
+                                        /**
+                                         * Load More Products Function - Loads additional products
+                                         */
+                                        function loadMoreProducts() {
+                                            console.log('Loading more products...');
+                                            // Implement infinite scroll or load more functionality
+                                        }
 
-        function loadMoreProducts() {
-            console.log('Loading more products...');
-            // Implement infinite scroll or load more functionality
-        }
+                                        /**
+                                         * Filter Products Function - Filters products based on selected criteria
+                                         */
+                                        function filterProducts() {
+                                            const cards = document.querySelectorAll('.product-card');
+                                            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+                                            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
 
-        // Filter functionality
-        function filterProducts() {
-            const cards = document.querySelectorAll('.product-card');
-            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+                                            let visibleCount = 0;
+                                            cards.forEach(card => {
+                                                const price = parseFloat(card.dataset.price);
+                                                const category = card.dataset.category;
 
-            let visibleCount = 0;
-            cards.forEach(card => {
-                const price = parseFloat(card.dataset.price);
-                const category = card.dataset.category;
+                                                // Check category filters
+                                                const catPhone = document.getElementById('catPhone').checked;
+                                                const catLaptop = document.getElementById('catLaptop').checked;
+                                                const catWatch = document.getElementById('catWatch').checked;
 
-                // Check category filters
-                const catPhone = document.getElementById('catPhone').checked;
-                const catLaptop = document.getElementById('catLaptop').checked;
-                const catWatch = document.getElementById('catWatch').checked;
+                                                let showByCategory = false;
+                                                if (category === 'phone' && catPhone) showByCategory = true;
+                                                if (category === 'computer' && catLaptop) showByCategory = true;
+                                                if (category === 'watch' && catWatch) showByCategory = true;
 
-                let showByCategory = false;
-                if (category === 'phone' && catPhone) showByCategory = true;
-                if (category === 'computer' && catLaptop) showByCategory = true;
-                if (category === 'watch' && catWatch) showByCategory = true;
+                                                // Show/hide based on filters
+                                                if (price >= minPrice && price <= maxPrice && showByCategory) {
+                                                    card.style.display = 'block';
+                                                    visibleCount++;
+                                                } else {
+                                                    card.style.display = 'none';
+                                                }
+                                            });
 
-                // Show/hide based on filters
-                if (price >= minPrice && price <= maxPrice && showByCategory) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+                                            document.getElementById('productCount').textContent = visibleCount;
+                                        }
 
-            document.getElementById('productCount').textContent = visibleCount;
-        }
+                                        // Add event listeners for filters
+                                        document.getElementById('minPrice').addEventListener('input', filterProducts);
+                                        document.getElementById('maxPrice').addEventListener('input', filterProducts);
+                                        document.querySelectorAll('.form-check-input').forEach(cb => {
+                                            cb.addEventListener('change', filterProducts);
+                                        });
+                                    </script>
 
-        // Add event listeners for filters
-        document.getElementById('minPrice').addEventListener('input', filterProducts);
-        document.getElementById('maxPrice').addEventListener('input', filterProducts);
-        document.querySelectorAll('.form-check-input').forEach(cb => {
-            cb.addEventListener('change', filterProducts);
-        });
-    </script>
+                                    <!-- Account Management Script -->
+                                    <script>
+                                        // Check if user is logged in on page load
+                                        function checkUserSession() {
+                                            const currentUser = sessionStorage.getItem('currentUser');
+                                            const accountNameSpan = document.getElementById('accountName');
+                                            const loginBtn = document.getElementById('loginBtn');
+                                            const logoutBtn = document.getElementById('logoutBtn');
+                                            const divider = document.getElementById('divider');
 
-    <!-- Account Management Script -->
-    <script>
-        // Check if user is logged in on page load
-        function checkUserSession() {
-            const currentUser = sessionStorage.getItem('currentUser');
-            const accountNameSpan = document.getElementById('accountName');
-            const loginBtn = document.getElementById('loginBtn');
-            const logoutBtn = document.getElementById('logoutBtn');
-            const divider = document.getElementById('divider');
+                                            if (currentUser) {
+                                                const user = JSON.parse(currentUser);
+                                                accountNameSpan.textContent = user.name;
+                                                loginBtn.style.display = 'none';
+                                                logoutBtn.style.display = 'block';
+                                                divider.style.display = 'block';
+                                            } else {
+                                                accountNameSpan.textContent = 'Account';
+                                                loginBtn.style.display = 'block';
+                                                logoutBtn.style.display = 'none';
+                                                divider.style.display = 'none';
+                                            }
+                                        }
 
-            if (currentUser) {
-                const user = JSON.parse(currentUser);
-                accountNameSpan.textContent = user.name;
-                loginBtn.style.display = 'none';
-                logoutBtn.style.display = 'block';
-                divider.style.display = 'block';
-            } else {
-                accountNameSpan.textContent = 'Account';
-                loginBtn.style.display = 'block';
-                logoutBtn.style.display = 'none';
-                divider.style.display = 'none';
-            }
-        }
+                                        // Handle logout
+                                        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+                                            e.preventDefault();
+                                            sessionStorage.removeItem('currentUser');
+                                            localStorage.removeItem('rememberedUser');
+                                            window.location.href = 'login.html';
+                                        });
 
-        // Handle logout
-        document.getElementById('logoutBtn').addEventListener('click', (e) => {
-            e.preventDefault();
-            sessionStorage.removeItem('currentUser');
-            localStorage.removeItem('rememberedUser');
-            window.location.href = 'login.html';
-        });
+                                        // Check session on page load
+                                        checkUserSession();
 
-        // Check session on page load
-        checkUserSession();
-
-        // Listen for storage changes (logout in other tabs)
-        window.addEventListener('storage', checkUserSession);
-    </script>
+                                        // Listen for storage changes (logout in other tabs)
+                                        window.addEventListener('storage', checkUserSession);
+                                    </script>
 </body>
 
 </html>
