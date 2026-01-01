@@ -1,20 +1,14 @@
-/* ========================================
-   CONTACT PAGE STYLES
-   ======================================== */
-
-/* Root Variables */
-:root {
-    --primary-color: #ffd700;
-    --dark-color: #1a1a1a;
-    --blue-color: #007bff;
-    --blue-dark: #0056b3;
-}
-
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffd700;
+    --secondary-color: #ff8c00;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
 }
 
 body {
@@ -24,10 +18,7 @@ body {
     background-color: #fff;
 }
 
-/* ========================================
-   NAVBAR
-   ======================================== */
-
+/* Navbar Styles */
 .navbar {
     background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -90,23 +81,29 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
 }
 
-.btn-outline-success,
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
 .btn-outline-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.btn-outline-success:hover,
 .btn-outline-primary:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--dark-color);
 }
 
-/* ========================================
-   FOOTER
-   ======================================== */
-
+/* Footer */
 .footer {
     background: var(--dark-color);
     color: #fff;
@@ -138,10 +135,7 @@ body {
     color: #999;
 }
 
-/* ========================================
-   CONTACT SECTION
-   ======================================== */
-
+/* Contact Section */
 .contact-section {
     padding: 80px 20px 120px;
     text-align: center;
@@ -155,13 +149,10 @@ body {
 }
 
 .contact-section h1 .highlight {
-    color: var(--blue-color);
+    color: #007bff;
 }
 
-/* ========================================
-   INFO CARDS
-   ======================================== */
-
+/* Info Cards */
 .info-cards {
     display: flex;
     justify-content: center;
@@ -192,7 +183,7 @@ body {
 .card-icon {
     width: 52px;
     height: 52px;
-    background: var(--blue-color);
+    background: #007bff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -203,7 +194,7 @@ body {
 
 .info-card:hover .card-icon {
     transform: scale(1.2) rotate(10deg);
-    background: var(--blue-dark);
+    background: #0056b3;
     box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
 }
 
@@ -223,10 +214,7 @@ body {
     color: #666;
 }
 
-/* ========================================
-   MAP
-   ======================================== */
-
+/* Map */
 .map-container {
     height: 520px;
     border-radius: 20px;
@@ -243,10 +231,7 @@ body {
     border: 0;
 }
 
-/* ========================================
-   FORM
-   ======================================== */
-
+/* Form */
 .form-container {
     background: #fff;
     border-radius: 24px;
@@ -291,7 +276,7 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--blue-color);
+    border-color: #007bff;
 }
 
 textarea {
@@ -300,7 +285,7 @@ textarea {
 }
 
 .submit-btn {
-    background: var(--blue-color);
+    background: #007bff;
     color: #fff;
     border: none;
     padding: 16px 50px;
@@ -310,17 +295,13 @@ textarea {
     cursor: pointer;
     margin: 30px auto 0;
     display: block;
-    transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: var(--blue-dark);
+    background: #0056b3;
 }
 
-/* ========================================
-   SOCIAL ICONS
-   ======================================== */
-
+/* Social Icons - Simple circles with hover */
 .social-icons {
     margin-top: 180px;
     display: flex;
@@ -331,7 +312,7 @@ textarea {
 .social-icons a {
     width: 52px;
     height: 52px;
-    background-color: var(--blue-color);
+    background-color: #007bff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -343,7 +324,7 @@ textarea {
 }
 
 .social-icons a:hover {
-    background-color: var(--blue-dark);
+    background-color: #0056b3;
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
 }
@@ -354,7 +335,7 @@ textarea {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--blue-color);
+    background-color: #007bff;
     color: #fff;
     padding: 8px 12px;
     border-radius: 6px;
@@ -374,7 +355,7 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: var(--blue-color);
+    border-top-color: #007bff;
     margin-bottom: -4px;
     opacity: 0;
     pointer-events: none;
@@ -391,9 +372,13 @@ textarea {
     font-size: 24px;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* Ensure no underline ever */
+.social-icons a:link,
+.social-icons a:visited,
+.social-icons a:hover,
+.social-icons a:active {
+    text-decoration: none;
+}
 
 @media (max-width: 992px) {
     .info-cards {

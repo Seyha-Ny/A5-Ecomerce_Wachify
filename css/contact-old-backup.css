@@ -2,19 +2,20 @@
    CONTACT PAGE STYLES
    ======================================== */
 
-/* Root Variables */
-:root {
-    --primary-color: #ffd700;
-    --dark-color: #1a1a1a;
-    --blue-color: #007bff;
-    --blue-dark: #0056b3;
-}
-
 /* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ffd700;
+    --secondary-color: #ff8c00;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
+    --blue-color: #007bff;
+    --blue-dark: #0056b3;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 }
 
 /* ========================================
-   NAVBAR
+   NAVBAR STYLES
    ======================================== */
 
 .navbar {
@@ -90,13 +91,22 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
 }
 
-.btn-outline-success,
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
 .btn-outline-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.btn-outline-success:hover,
 .btn-outline-primary:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
@@ -104,7 +114,7 @@ body {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER STYLES
    ======================================== */
 
 .footer {
@@ -224,7 +234,7 @@ body {
 }
 
 /* ========================================
-   MAP
+   MAP SECTION
    ======================================== */
 
 .map-container {
@@ -244,7 +254,7 @@ body {
 }
 
 /* ========================================
-   FORM
+   FORM SECTION
    ======================================== */
 
 .form-container {
@@ -389,6 +399,13 @@ textarea {
 .social-icons i {
     color: #fff;
     font-size: 24px;
+}
+
+.social-icons a:link,
+.social-icons a:visited,
+.social-icons a:hover,
+.social-icons a:active {
+    text-decoration: none;
 }
 
 /* ========================================
