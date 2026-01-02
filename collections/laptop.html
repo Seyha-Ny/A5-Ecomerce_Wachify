@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization for laptops collection -->
+    <title>Laptops Collection - WeShop</title>
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons for additional icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/laptop.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- Inline CSS for footer styling -->
+
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../product.html">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle active" type="button" id="collectionsDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="phones.html"><i class="bi bi-phone"></i>
+                                    Smart Phones</a></li>
+                            <li><a class="dropdown-item" href="watches.html"><i class="bi bi-smartwatch"></i>
+                                    Smart Watches</a></li>
+                            <li><a class="dropdown-item active" href="laptops.html"><i class="bi bi-laptop"></i>
+                                    Laptops</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2 ms-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search laptops..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="../login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collection Hero Section -->
+    <section class="collection-hero">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Laptops Collection</h1>
+            <p class="lead mb-4">High-performance laptops for work, gaming, and creativity with cutting-edge technology
+            </p>
+
+            <div class="collection-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Gaming Models</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Top Brands</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">16GB+</div>
+                    <div class="stat-label">RAM Options</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">RTX</div>
+                    <div class="stat-label">Graphics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laptop Features Section -->
+    <section class="container">
+        <div class="laptop-features">
+            <h2 class="section-title">Why Choose Our Laptops?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h4>Latest Processors</h4>
+                    <p>Intel Core i9 and AMD Ryzen 9 for ultimate performance</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Gaming Power</h4>
+                    <p>RTX graphics and high refresh rate displays</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h4>All-Day Battery</h4>
+                    <p>Extended battery life for mobile productivity</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4>4K Displays</h4>
+                    <p>Stunning visuals with color-accurate screens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Performance Showcase -->
+    <section class="performance-showcase">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Ultimate Performance</h2>
+            <p class="lead mb-5">Engineered for professionals, gamers, and creators</p>
+
+            <div class="performance-features">
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h5>High Speed</h5>
+                    <p>Up to 5.3GHz clock speed</p>
+                </div>
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <h5>64GB RAM</h5>
+                    <p>Maximum memory capacity</p>
+                </div>
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h5>2TB SSD</h5>
+                    <p>Lightning-fast storage</p>
+                </div>
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h5>Cooling</h5>
+                    <p>Advanced thermal system</p>
+                </div>
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h5>Wi-Fi 6E</h5>
+                    <p>Next-gen connectivity</p>
+                </div>
+                <div class="performance-feature">
+                    <div class="performance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Security</h5>
+                    <p>Biometric protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Showcase -->
+    <section class="brand-showcase">
+        <div class="container">
+            <h2 class="section-title">Featured Brands</h2>
+            <p class="section-subtitle">Premium laptop manufacturers trusted worldwide</p>
+            <div class="brand-grid">
+                <div class="brand-item">
+                    <div class="brand-logo">🎮</div>
+                    <div class="brand-name">ASUS ROG</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">🔷</div>
+                    <div class="brand-name">Lenovo</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">💻</div>
+                    <div class="brand-name">Dell</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">🖥</div>
+                    <div class="brand-name">HP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Products -->
+    <section class="container collection-products">
+        <h2 class="section-title">Our Laptop Collection</h2>
+        <p class="section-subtitle">Powerful machines for every need and budget</p>
+
+
+        <div class="product-grid" id="productGrid">
+            <!-- ROG Strix G16 -->
+            <div class="product-card" data-category="computer" data-price="1199">
+                <div class="product-badge">Gaming</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('strixg16')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('strixg16')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu3.png" alt="ROG Strix G16">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">ROG Strix G16</h3>
+                    <p class="product-subtitle">Ultimate gaming machine with RTX 4070</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(189)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$1,199</span>
+                        <span class="original-price">$1,499</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('strixg16', 'ROG Strix G16', 1199, '../img/menu3.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Lenovo Legion -->
+            <div class="product-card" data-category="computer" data-price="999">
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('legion01')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('legion01')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu4.png" alt="Lenovo Legion">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Lenovo Legion</h3>
+                    <p class="product-subtitle">Professional gaming laptop</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(234)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$999</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('legion01', 'Lenovo Legion', 999, '../img/menu4.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Dell G15 Gaming -->
+            <div class="product-card" data-category="computer" data-price="999">
+                <div class="product-badge">Value</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('dellg15')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('dellg15')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu11.png" alt="Dell G15 Gaming">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Dell G15 Gaming</h3>
+                    <p class="product-subtitle">Affordable gaming powerhouse</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(156)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$999</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('dellg15', 'Dell G15 Gaming', 999, '../img/menu11.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- HP Pavilion 15 -->
+            <div class="product-card" data-category="computer" data-price="699">
+                <div class="product-badge">Popular</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('hppavilion')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('hppavilion')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu15.png" alt="HP Pavilion 15">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">HP Pavilion 15</h3>
+                    <p class="product-subtitle">Everyday productivity laptop</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(234)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$699</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('hppavilion', 'HP Pavilion 15', 699, '../img/menu15.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ASUS TUF 2020 -->
+            <div class="product-card" data-category="computer" data-price="899">
+                <div class="product-badge">Durable</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('asustuf')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('asustuf')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu16.png" alt="ASUS TUF 2020">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">ASUS TUF 2020</h3>
+                    <p class="product-subtitle">Durable gaming laptop</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(345)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$899</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('asustuf', 'ASUS TUF 2020', 899, '../img/menu16.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">WESHOP</h5>
+                    <p>Your trusted partner for premium electronics and smart devices.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="../product.html" class="footer-link">Shop</a></li>
+                        <li><a href="../about.html" class="footer-link">About Us</a></li>
+                        <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Collections</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="phones.html" class="footer-link">Smart Phones</a></li>
+                        <li><a href="watches.html" class="footer-link">Smart Watches</a></li>
+                        <li><a href="laptops.html" class="footer-link">Laptops</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Connect With Us</h5>
+                    <p>Follow us on social media for updates and exclusive offers</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WESHOP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <!-- <script src="../js/products.js"></script> -->
+    <script src="../js/laptop.js"></script>
+
+
+</body>
+
+</html>
