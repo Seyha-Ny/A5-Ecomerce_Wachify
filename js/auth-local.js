@@ -60,6 +60,7 @@ document.getElementById('sign-up-form').addEventListener('submit', (e) => {
   // Automatically switch to sign in panel for better user experience
   document.querySelector('.container').classList.remove('sign-up-mode');
 });
+
 /**
  * Handle user authentication (Sign In)
  * Validates credentials and creates user session if authentication succeeds
@@ -92,6 +93,15 @@ document.getElementById('sign-in-form').addEventListener('submit', (e) => {
   } else {
     // Authentication failed - invalid credentials
     alert('Incorrect username/email or password!');
+  }
+});
+
+// Check if user is already logged in and redirect if needed
+document.addEventListener('DOMContentLoaded', () => {
+  const currentUser = localStorage.getItem('currentUser');
+  if (currentUser && window.location.pathname.includes('login.html')) {
+    // User is already logged in, redirect to dashboard
+    window.location.href = 'dashboard.html';
   }
 });
 

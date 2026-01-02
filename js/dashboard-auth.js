@@ -14,14 +14,35 @@ if (!currentUser) {
   window.location.href = "login.html";
 } else {
   // User is authenticated - display user information on dashboard
-  document.getElementById('user-name').textContent = currentUser.username;
-  document.getElementById('user-email').textContent = currentUser.email;
+  const accountNameSpan = document.getElementById('accountName');
+  const loginBtn = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const divider = document.getElementById('divider');
+
+  if (accountNameSpan) accountNameSpan.textContent = currentUser.username;
+  if (loginBtn) loginBtn.style.display = 'none';
+  if (logoutBtn) logoutBtn.style.display = 'block';
+  if (divider) divider.style.display = 'block';
 }
 
 // Logout functionality - clears session and redirects to login
-document.getElementById('logout-btn').addEventListener('click', () => {
-  // Remove current user session from localStorage
-  localStorage.removeItem('currentUser');
-  // Redirect to login page after logout
-  window.location.href = "login.html";
-});
+const logoutBtn = document.getElementById('logout-btn');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    // Remove current user session from localStorage
+    localStorage.removeItem('currentUser');
+    // Redirect to login page after logout
+    window.location.href = "login.html";
+  });
+}
+
+// Also handle the logout button in the dropdown
+const logoutDropdownBtn = document.getElementById('logoutBtn');
+if (logoutDropdownBtn) {
+  logoutDropdownBtn.addEventListener('click', () => {
+    // Remove current user session from localStorage
+    localStorage.removeItem('currentUser');
+    // Redirect to login page after logout
+    window.location.href = "login.html";
+  });
+}

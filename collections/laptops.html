@@ -1055,7 +1055,7 @@
     <script>
         // Check if user is logged in on page load
         function checkUserSession() {
-            const currentUser = sessionStorage.getItem('currentUser');
+            const currentUser = localStorage.getItem('currentUser'); // Use localStorage
             const accountNameSpan = document.getElementById('accountName');
             const loginBtn = document.getElementById('loginBtn');
             const logoutBtn = document.getElementById('logoutBtn');
@@ -1063,7 +1063,7 @@
 
             if (currentUser) {
                 const user = JSON.parse(currentUser);
-                accountNameSpan.textContent = user.name;
+                accountNameSpan.textContent = user.username; // Use username from login system
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'block';
                 divider.style.display = 'block';
@@ -1078,7 +1078,7 @@
         // Handle logout
         document.getElementById('logoutBtn').addEventListener('click', (e) => {
             e.preventDefault();
-            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('currentUser'); // Use localStorage
             localStorage.removeItem('rememberedUser');
             window.location.href = '../login.html';
         });

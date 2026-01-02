@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Bootstrap Icons for additional icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-   
+
     <!-- Additional CSS files for specific page styling -->
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/feedback.css">
@@ -23,6 +23,7 @@
     <!-- Font Awesome Kit for extended icon library -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
+
 <body>
     <!-- Navigation Bar - Main site navigation with user account and cart -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -398,8 +399,8 @@
          * Updates UI based on authentication status
          */
         function checkUserSession() {
-            // Get current user from sessionStorage
-            const currentUser = sessionStorage.getItem('currentUser');
+            // Get current user from localStorage (consistent with login system)
+            const currentUser = localStorage.getItem('currentUser');
             // Get DOM elements for UI updates
             const accountNameSpan = document.getElementById('accountName');
             const loginBtn = document.getElementById('loginBtn');
@@ -409,7 +410,7 @@
             if (currentUser) {
                 // User is logged in - show user info and logout button
                 const user = JSON.parse(currentUser);
-                accountNameSpan.textContent = user.name;
+                accountNameSpan.textContent = user.username; // Use username from login system
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'block';
                 divider.style.display = 'block';
@@ -428,8 +429,8 @@
          */
         document.getElementById('logoutBtn').addEventListener('click', (e) => {
             e.preventDefault();
-            // Clear session storage
-            sessionStorage.removeItem('currentUser');
+            // Clear localStorage (consistent with login system)
+            localStorage.removeItem('currentUser');
             // Clear remembered user data
             localStorage.removeItem('rememberedUser');
             // Redirect to login page

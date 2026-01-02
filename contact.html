@@ -453,8 +453,8 @@
          * Updates UI based on authentication status
          */
         function checkUserSession() {
-            // Get current user from sessionStorage
-            const currentUser = sessionStorage.getItem('currentUser');
+            // Get current user from localStorage (consistent with login system)
+            const currentUser = localStorage.getItem('currentUser');
             // Get DOM elements for UI updates
             const accountNameSpan = document.getElementById('accountName');
             const loginBtn = document.getElementById('loginBtn');
@@ -464,7 +464,7 @@
             if (currentUser) {
                 // User is logged in - show user info and logout button
                 const user = JSON.parse(currentUser);
-                accountNameSpan.textContent = user.name;
+                accountNameSpan.textContent = user.username; // Use username from login system
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'block';
                 divider.style.display = 'block';
@@ -483,8 +483,8 @@
          */
         document.getElementById('logoutBtn').addEventListener('click', (e) => {
             e.preventDefault();
-            // Clear session storage
-            sessionStorage.removeItem('currentUser');
+            // Clear localStorage (consistent with login system)
+            localStorage.removeItem('currentUser');
             // Clear remembered user data
             localStorage.removeItem('rememberedUser');
             // Redirect to login page
@@ -494,7 +494,6 @@
         // Check session on page load
         checkUserSession();
 
-        // Listen for storage changes (logout in other tabs)
         window.addEventListener('storage', checkUserSession);
 
         /**
