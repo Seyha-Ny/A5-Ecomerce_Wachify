@@ -15,11 +15,11 @@
     <!-- Bootstrap Icons for additional icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS files -->
-     <link rel="stylesheet" href="../css-phoun/phone.css">
-     <link rel="stylesheet" href="../css-phoun/footer.css">
-   
+    <link rel="stylesheet" href="../css-phoun/phone.css">
+    <link rel="stylesheet" href="../css-phoun/footer.css">
+
     <!-- Inline CSS for collection-specific styles -->
-   
+
 </head>
 
 <body>
@@ -177,145 +177,275 @@
     </section>
 
     <section class="container collection-products">
-        <h2 class="section-title">Our Smartphone Collection</h2>
-        <p class="section-subtitle">Handpicked devices that deliver exceptional performance and
-            value</p>
+        <div class="collection-products-text">
+            <h2 class="section-title">Our Smartphone Collection</h2>
+            <p class="section-subtitle">Handpicked devices that deliver exceptional performance and
+                value</p>
+        </div>
         <div class="product-grid" id="productGrid">
-            <!-- < !-- Google Pixel 8 Pro --> 
-                <div class="product-card" data-category="phone" data-price="599">
-                    <div class="product-badge">New</div>
-                    <div class="product-image">
-                        <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('pixel01')"><i
-                                    class="fas fa-eye"></i></button><button class="quick-action-btn"
-                                onclick="compareProduct('pixel01')"><i class="fas fa-balance-scale"></i></button></div>
-                        <img src="../img/menu9.png" alt="Google Pixel 8 Pro">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Google Pixel 8 Pro</h3>
-                        <p class="product-subtitle">AI-powered flagship with exceptional camera</p>
-                        <div class="product-rating">
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star-half-alt"></i>
-                            </div><span class="rating-count">(234)</span>
-                        </div>
-                        <div class="product-price"><span class="current-price">$599</span><span
-                                class="original-price">$799</span></div>
-                        <div class="product-actions"><button class="add-to-cart-btn"
-                                onclick="addToCart('pixel01', 'Google Pixel 8 Pro', 599, '../img/menu9.png')"><i
-                                    class="fas fa-shopping-cart me-2"></i>Add to Cart
-                            </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
-                                    class="far fa-heart"></i></button></div>
-                    </div>
+            <!-- < !-- Google Pixel 8 Pro -->
+            <div class="product-card" data-category="phone" data-price="599">
+                <div class="product-badge">New</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('pixel01')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('pixel01')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu9.png" alt="Google Pixel 8 Pro">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">Google Pixel 8 Pro</h3>
+                    <p class="product-subtitle">AI-powered flagship with exceptional camera</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(234)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$599</span><span
+                            class="original-price">$799</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('pixel01', 'Google Pixel 8 Pro', 599, '../img/menu9.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
 
-                <div class="product-card" data-category="phone" data-price="699">
-                    <div class="product-badge">Popular</div>
-                    <div class="product-image">
-                        <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone17')"><i
-                                    class="fas fa-eye"></i></button><button class="quick-action-btn"
-                                onclick="compareProduct('iphone17')"><i class="fas fa-balance-scale"></i></button></div>
-                        <img src="../img/menu5.png" alt="iPhone 17 Pro Max">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">iPhone 17 Pro Max</h3>
-                        <p class="product-subtitle">Apple's latest innovation with titanium
-                            design</p>
-                        <div class="product-rating">
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <span class="rating-count">(1, 234)</span>
-                        </div>
-                        <div class="product-price"><span class="current-price">$699</span><span
-                                class="original-price">$999</span></div>
-                        <div class="product-actions"><button class="add-to-cart-btn"
-                                onclick="addToCart('iphone17', 'iPhone 17 Pro Max', 699, '../img/menu5.png')"><i
-                                    class="fas fa-shopping-cart me-2"></i>Add to Cart
-                            </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
-                                    class="far fa-heart"></i></button></div>
-                    </div>
+            <div class="product-card" data-category="phone" data-price="699">
+                <div class="product-badge">Popular</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone17')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone17')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu5.png" alt="iPhone 17 Pro Max">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 17 Pro Max</h3>
+                    <p class="product-subtitle">Apple's latest innovation with titanium
+                        design</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="rating-count">(1, 234)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$699</span><span
+                            class="original-price">$999</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone17', 'iPhone 17 Pro Max', 699, '../img/menu5.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
 
-                <div class="product-card" data-category="phone" data-price="699">
-                    <div class="product-image">
-                        <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('samsung01')"><i
-                                    class="fas fa-eye"></i></button><button class="quick-action-btn"
-                                onclick="compareProduct('samsung01')"><i class="fas fa-balance-scale"></i></button>
-                        </div><img src="../img/menu12.png" alt="Samsung Galaxy S24">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Samsung Galaxy S24</h3>
-                        <p class="product-subtitle">Flagship Android with stunning display
-                        </p>
-                        <div class="product-rating">
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star-half-alt"></i>
-                            </div><span class="rating-count">(445)</span>
-                        </div>
-                        <div class="product-price"><span class="current-price">$699</span>
-                        </div>
-                        <div class="product-actions"><button class="add-to-cart-btn"
-                                onclick="addToCart('samsung01', 'Samsung Galaxy S24', 699, '../img/menu12.png')"><i
-                                    class="fas fa-shopping-cart me-2"></i>Add to Cart
-                            </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
-                                    class="far fa-heart"></i></button></div>
-                    </div>
+            <div class="product-card" data-category="phone" data-price="699">
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('samsung01')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('samsung01')"><i class="fas fa-balance-scale"></i></button>
+                    </div><img src="../img/menu12.png" alt="Samsung Galaxy S24">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">Samsung Galaxy S24</h3>
+                    <p class="product-subtitle">Flagship Android with stunning display
+                    </p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(445)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$699</span>
+                    </div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('samsung01', 'Samsung Galaxy S24', 699, '../img/menu12.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
 
-                <div class="product-card" data-category="phone" data-price="499">
-                    <div class="product-badge">Budget</div>
-                    <div class="product-image">
-                        <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('oppoa3')"><i
-                                    class="fas fa-eye"></i></button><button class="quick-action-btn"
-                                onclick="compareProduct('oppoa3')"><i class="fas fa-balance-scale"></i></button></div>
-                        <img src="../img/menu13.png" alt="Oppo A3">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Oppo A3</h3>
-                        <p class="product-subtitle">Affordable smartphone with great
-                            features</p>
-                        <div class="product-rating">
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                            </div><span class="rating-count">(123)</span>
-                        </div>
-                        <div class="product-price"><span class="current-price">$499</span>
-                        </div>
-                        <div class="product-actions"><button class="add-to-cart-btn"
-                                onclick="addToCart('oppoa3', 'Oppo A3', 499, '../img/menu13.png')"><i
-                                    class="fas fa-shopping-cart me-2"></i>Add to Cart
-                            </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
-                                    class="far fa-heart"></i></button></div>
-                    </div>
+            <div class="product-card" data-category="phone" data-price="499">
+                <div class="product-badge">Budget</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('oppoa3')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('oppoa3')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu13.png" alt="Oppo A3">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">Oppo A3</h3>
+                    <p class="product-subtitle">Affordable smartphone with great
+                        features</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div><span class="rating-count">(123)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$499</span>
+                    </div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('oppoa3', 'Oppo A3', 499, '../img/menu13.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
 
-                <div class="product-card" data-category="phone" data-price="399">
-                    <div class="product-badge">Sale</div>
-                    <div class="product-image">
-                        <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
-                                    class="fas fa-eye"></i></button><button class="quick-action-btn"
-                                onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
-                        <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">iPhone 15 Pro Max</h3>
-                        <p class="product-subtitle">Previous generation flagship at
-                            great price</p>
-                        <div class="product-rating">
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star-half-alt"></i></div><span class="rating-count">(890)</span>
-                        </div>
-                        <div class="product-price"><span class="current-price">$399</span><span
-                                class="original-price">$699</span></div>
-                        <div class="product-actions"><button class="add-to-cart-btn"
-                                onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
-                                    class="fas fa-shopping-cart me-2"></i>Add to
-                                Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
-                                    class="far fa-heart"></i></button></div>
-                    </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
+            <div class="product-card" data-category="phone" data-price="399">
+                <div class="product-badge">Sale</div>
+                <div class="product-image">
+                    <div class="quick-actions"><button class="quick-action-btn" onclick="quickView('iphone15')"><i
+                                class="fas fa-eye"></i></button><button class="quick-action-btn"
+                            onclick="compareProduct('iphone15')"><i class="fas fa-balance-scale"></i></button></div>
+                    <img src="../img/menu14.png" alt="iPhone 15 Pro Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                    <p class="product-subtitle">Previous generation flagship at
+                        great price</p>
+                    <div class="product-rating">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div><span class="rating-count">(890)</span>
+                    </div>
+                    <div class="product-price"><span class="current-price">$399</span><span
+                            class="original-price">$699</span></div>
+                    <div class="product-actions"><button class="add-to-cart-btn"
+                            onclick="addToCart('iphone15', 'iPhone 15 Pro Max', 399, '../img/menu14.png')"><i
+                                class="fas fa-shopping-cart me-2"></i>Add to
+                            Cart </button><button class="wishlist-btn" onclick="toggleWishlist(this)"><i
+                                class="far fa-heart"></i></button></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -361,6 +491,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js-phoun/cart.js"></script>
     <script src="../js-phoun/phone.js"></script>
 
 </body>

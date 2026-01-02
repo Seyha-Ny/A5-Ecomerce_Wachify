@@ -247,7 +247,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center; /* center all cards horizontally */
+    justify-content: center;
+    /* center all cards horizontally */
     margin-bottom: 3rem;
     padding: 0 1rem;
 }
@@ -260,8 +261,10 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
-    width: 300px;       /* fixed width */
-    flex: 0 0 auto;     /* prevent stretching */
+    width: 300px;
+    /* fixed width */
+    flex: 0 0 auto;
+    /* prevent stretching */
     text-align: center;
 }
 
@@ -364,7 +367,8 @@ body {
 .product-price {
     display: flex;
     align-items: center;
-    justify-content: center; /* center price */
+    justify-content: center;
+    /* center price */
     gap: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -384,7 +388,8 @@ body {
 /* Product Actions */
 .product-actions {
     display: flex;
-    justify-content: center; /* center buttons */
+    justify-content: center;
+    /* center buttons */
     gap: 0.5rem;
 }
 
@@ -513,5 +518,13 @@ body {
 @media (max-width: 600px) {
     .product-card {
         width: 90%;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }

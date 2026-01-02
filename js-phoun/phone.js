@@ -23,12 +23,7 @@ function toggleWishlist(btn) {
     }
 }
 
-function addToCart(productId, name, price, image) {
-    console.log('Adding to cart:', {
-        productId, name, price, image
-    });
-    // Implement add to cart functionality
-}
+
 function checkUserSession() {
     const currentUser = sessionStorage.getItem('currentUser');
     const accountNameSpan = document.getElementById('accountName');
