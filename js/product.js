@@ -1,26 +1,4 @@
-
-// FILTER PRODUCTS
-
-const filters = document.querySelectorAll(".product-choose1");
-const cards = document.querySelectorAll(".menu-product .card");
-
-filters.forEach(filter => {
-    filter.addEventListener("click", () => {
-        const category = filter.dataset.filter;
-
-        cards.forEach(card => {
-            card.style.display =
-                category === "all" || card.dataset.category === category
-                    ? "block"
-                    : "none";
-        });
-
-        filters.forEach(f => f.classList.remove("active"));
-        filter.classList.add("active");
-    });
-});
-
-// CART SYSTEM
+// ===== CART SYSTEM =====
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Update cart badge
@@ -32,32 +10,43 @@ function updateCartCount() {
     cartCount.textContent = total;
 }
 
-// Add to cart on navbar
+// Add product to cart
+function addToCart(product) {
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push(product);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Add event listener to cart buttons
 document.querySelectorAll(".cart-btn").forEach(btn => {
     btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+
+        // SAFELY get price: either data-price or .price text
+        let priceText = btn.dataset.price || card.querySelector(".price").innerText || "0";
+        // Remove $ and any spaces, then convert to Number
+        let priceNumber = Number(priceText.replace("$", "").trim());
+
+        if (isNaN(priceNumber)) priceNumber = 0; // fallback
+
         const product = {
-            id: btn.dataset.id,
-            name: btn.dataset.name,
-            price: Number(btn.dataset.price),
-            image: btn.dataset.image,
+            id: btn.dataset.id || card.querySelector(".title").innerText,
+            name: btn.dataset.name || card.querySelector(".title").innerText,
+            price: priceNumber,
+            image: btn.dataset.image || card.querySelector("img").src,
             qty: 1
         };
 
-        const exist = cart.find(item => item.id === product.id);
+        addToCart(product);
 
-        if (exist) {
-            exist.qty++;
-        } else {
-            cart.push(product);
-        }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount();
-
-        // UI feedback
+        // Feedback animation
         btn.innerHTML = "✔ Added";
         btn.disabled = true;
-
         setTimeout(() => {
             btn.innerHTML = `<i class="fas fa-shopping-cart"></i> Add to cart`;
             btn.disabled = false;
@@ -65,99 +54,55 @@ document.querySelectorAll(".cart-btn").forEach(btn => {
     });
 });
 
-// Load page to page product
+// ===== PRODUCT FILTER =====
+const filters = document.querySelectorAll(".product-choose1");
+const cards = document.querySelectorAll(".menu-product .card");
 
-// Load cart count on page load
-updateCartCount();
-
-// Wait until the page is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-
-    //  Get the Load More button
-    const loadButton = document.querySelector(".load");
-
-    //  Get ALL product cards
-    const products = document.querySelectorAll(".menu-product .card");
-
-    //  When user clicks the button
-    loadButton.addEventListener("click", function () {
-
-        // Show every product
-        products.forEach(function (product) {
-            product.style.display = "block";
+filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+        const category = filter.dataset.filter;
+        cards.forEach(card => {
+            card.style.display = category === "all" || card.dataset.category === category ? "block" : "none";
         });
-
-        //  Hide the Load More button after click (optional)
-        loadButton.style.display = "block";
-    });
-
-});
-
-// Submit form order product
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the form
-    const buyForm = document.querySelector(".buy-product-form");
-
-    buyForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // You can access input values if needed
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        const productName = document.getElementById("productName").value;
-        const model = document.getElementById("model").value;
-        const location = document.getElementById("location").value;
-
-        // Optionally, you can validate fields here if needed
-
-        // Show success message to the user
-        const messageBox = document.createElement("div");
-        messageBox.textContent = `Thank you ${firstName}! Your order for ${productName} (${model}) has been received.`;
-        messageBox.style.background = "#d4edda";
-        messageBox.style.color = "#155724";
-        messageBox.style.padding = "15px";
-        messageBox.style.borderRadius = "8px";
-        messageBox.style.marginTop = "20px";
-        messageBox.style.textAlign = "center";
-        messageBox.style.fontWeight = "500";
-
-        // Remove previous messages if exist
-        const existingMessage = document.querySelector(".buy-product-form + div");
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-
-        // Append message after the form
-        buyForm.parentNode.appendChild(messageBox);
-
-        // Optional: clear form fields after submission
-        buyForm.reset();
+        filters.forEach(f => f.classList.remove("active"));
+        filter.classList.add("active");
     });
 });
 
-//Search product
+// ===== LOAD MORE =====
+document.querySelector(".load").addEventListener("click", () => {
+    cards.forEach(card => card.style.display = "block");
+});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const searchForm = document.querySelector("form.d-flex");
-    const searchInput = searchForm.querySelector("input[type='search']");
-    const productCards = document.querySelectorAll(".menu-product .card");
+// ===== ORDER FORM =====
+document.querySelector(".buy-product-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const firstName = document.getElementById("firstName").value;
+    const productName = document.getElementById("productName").value;
+    const model = document.getElementById("model").value;
 
-    searchForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // prevent page reload
+    const msg = document.createElement("div");
+    msg.textContent = `Thank you ${firstName}! Your order for ${productName} (${model}) has been received.`;
+    msg.className = "alert alert-success mt-3";
 
-        const searchValue = searchInput.value.toLowerCase().trim();
+    const existing = document.querySelector(".buy-product-form + .alert");
+    if (existing) existing.remove();
 
-        productCards.forEach(card => {
-            const productName = card.querySelector(".title").innerText.toLowerCase();
+    document.querySelector(".buy-product-form").after(msg);
+    e.target.reset();
+});
 
-            if (productName.includes(searchValue)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
+// ===== SEARCH PRODUCT =====
+document.querySelector("form.d-flex").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchValue = e.target.querySelector("input[type='search']").value.toLowerCase().trim();
+    cards.forEach(card => {
+        const name = card.querySelector(".title").innerText.toLowerCase();
+        card.style.display = name.includes(searchValue) ? "block" : "none";
     });
+});
+
+// ===== INITIALIZE =====
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
 });
