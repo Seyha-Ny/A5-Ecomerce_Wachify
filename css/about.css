@@ -240,13 +240,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff3b3b;
+    color: #d32f2f;
     transition: 0.3s ease;
 }
 
 .social-icons a:hover {
     background: #ff3b3b;
-    color: #fff;
+    color: #1a1a1a;
     transform: translateY(-5px);
 }
 
@@ -329,21 +329,6 @@
     color: #999;
 }
 
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.social-icons a {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2);
-}
 html {
     scroll-behavior: smooth;
 }
