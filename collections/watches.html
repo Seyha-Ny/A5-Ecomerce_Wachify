@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title with SEO optimization for smartwatches collection -->
+    <title>Smart Watches Collection - WeShop</title>
+    <!-- External CSS libraries -->
+    <!-- Bootstrap CSS for responsive design and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap Icons for additional icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS files -->
+    <link rel="stylesheet" href="../css-phoun/watch.css">
+    <link rel="stylesheet" href="../css-phoun/footer.css">
+    <!-- Inline CSS for footer styling -->
+
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../dashboard.html">
+                <i class="bi bi-bing"></i>
+                WESHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../product.html">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle active" type="button" id="collectionsDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Collections
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                            <li><a class="dropdown-item" href="phones.html"><i class="bi bi-phone"></i>
+                                    Smart Phones</a></li>
+                            <li><a class="dropdown-item active" href="watches.html"><i class="bi bi-smartwatch"></i>
+                                    Smart Watches</a></li>
+                            <li><a class="dropdown-item" href="laptops.html"><i class="bi bi-laptop"></i>
+                                    Laptops</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2 ms-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search watches..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accountDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                            <span id="accountName" class="ms-2">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="../login.html" id="loginBtn"><i
+                                        class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider" id="divider" style="display:none;">
+                            </li>
+                            <li><button class="dropdown-item" id="logoutBtn"
+                                    style="display:none; border:none; background:none; cursor:pointer; text-align:left; width:100%; padding: 0.5rem 1rem;"><i
+                                        class="bi bi-box-arrow-right"></i> Logout</button></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collection Hero Section -->
+    <section class="collection-hero">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Smart Watches Collection</h1>
+            <p class="lead mb-4">Advanced timepieces that blend cutting-edge technology with elegant design for your
+                active lifestyle</p>
+
+            <div class="collection-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Premium Models</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Top Brands</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Day Battery</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Water</div>
+                    <div class="stat-label">Resistant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Features Section -->
+    <section class="container">
+        <div class="watch-features">
+            <h2 class="section-title">Why Choose Our Smartwatches?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>Health Monitoring</h4>
+                    <p>Track heart rate, sleep, and fitness metrics 24/7</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Smart Notifications</h4>
+                    <p>Stay connected with calls, messages, and app alerts</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h4>Fitness Tracking</h4>
+                    <p>Monitor workouts, steps, calories, and activities</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h4>Long Battery Life</h4>
+                    <p>Extended battery life for uninterrupted use</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tracking Section -->
+    <section class="health-tracking">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Advanced Health & Fitness</h2>
+            <p class="lead mb-5">Comprehensive health monitoring to help you live your best life</p>
+
+            <div class="health-features">
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h5>Heart Rate</h5>
+                    <p>24/7 monitoring</p>
+                </div>
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h5>Sleep Analysis</h5>
+                    <p>Detailed sleep stages</p>
+                </div>
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h5>Calorie Tracking</h5>
+                    <p>Activity monitoring</p>
+                </div>
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h5>Blood Oxygen</h5>
+                    <p>SpO2 measurement</p>
+                </div>
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h5>Stress Tracking</h5>
+                    <p>Mental wellness</p>
+                </div>
+                <div class="health-feature">
+                    <div class="health-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h5>Step Counter</h5>
+                    <p>Daily activity goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Showcase -->
+    <section class="brand-showcase">
+        <div class="container">
+            <h2 class="section-title">Featured Brands</h2>
+            <p class="section-subtitle">Premium smartwatch brands trusted by millions</p>
+            <div class="brand-grid">
+                <div class="brand-item">
+                    <div class="brand-logo">⌚</div>
+                    <div class="brand-name">Rolex</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">🌟</div>
+                    <div class="brand-name">Samsung</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">🍎</div>
+                    <div class="brand-name">Apple</div>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">🟢</div>
+                    <div class="brand-name">Amazfit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Products -->
+    <section class="container collection-products">
+        <h2 class="section-title">Our Smartwatch Collection</h2>
+        <p class="section-subtitle">Premium timepieces with cutting-edge technology</p>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Premium Black Watch -->
+            <div class="product-card" data-category="watch" data-price="899">
+                <div class="product-badge">Bestseller</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('blackwatch01')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('blackwatch01')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu1.png" alt="Premium Black Watch">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Premium Black Watch</h3>
+                    <p class="product-subtitle">Classic elegance meets modern tech</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(512)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$899</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('blackwatch01', 'Premium Black Watch', 899, '../img/menu1.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Green Watch -->
+            <div class="product-card" data-category="watch" data-price="999">
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('greenwatch01')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('greenwatch01')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu2.png" alt="Green Watch">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Green Watch</h3>
+                    <p class="product-subtitle">Eco-friendly smart timepiece</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(89)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$999</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('greenwatch01', 'Green Watch', 999, '../img/menu2.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rolex -->
+            <div class="product-card" data-category="watch" data-price="799">
+                <div class="product-badge">Premium</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('rolex01')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('rolex01')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu10.png" alt="Rolex">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Rolex Smart Edition</h3>
+                    <p class="product-subtitle">Luxury Swiss timepiece with smart features</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(892)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$799</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('rolex01', 'Rolex Smart Edition', 799, '../img/menu10.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galaxy Watch 5 Pro -->
+            <div class="product-card" data-category="watch" data-price="999">
+                <div class="product-badge">Advanced</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('galaxywatch')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('galaxywatch')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu17.png" alt="Galaxy Watch 5 Pro">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Galaxy Watch 5 Pro</h3>
+                    <p class="product-subtitle">Advanced health tracking and fitness</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(567)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$999</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('galaxywatch', 'Galaxy Watch 5 Pro', 999, '../img/menu17.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GTS7 Pro -->
+            <div class="product-card" data-category="watch" data-price="1199">
+                <div class="product-badge">Professional</div>
+                <div class="product-image">
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="quickView('gts7pro')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="quick-action-btn" onclick="compareProduct('gts7pro')">
+                            <i class="fas fa-balance-scale"></i>
+                        </button>
+                    </div>
+                    <img src="../img/menu18.png" alt="GTS7 Pro">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">GTS7 Pro</h3>
+                    <p class="product-subtitle">Premium fitness watch with advanced metrics</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(234)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$1,199</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('gts7pro', 'GTS7 Pro', 1199, '../img/menu18.png')">
+                            <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">WESHOP</h5>
+                    <p>Your trusted partner for premium electronics and smart devices.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../dashboard.html" class="footer-link">Home</a></li>
+                        <li><a href="../product.html" class="footer-link">Shop</a></li>
+                        <li><a href="../about.html" class="footer-link">About Us</a></li>
+                        <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Collections</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="phones.html" class="footer-link">Smart Phones</a></li>
+                        <li><a href="watches.html" class="footer-link">Smart Watches</a></li>
+                        <li><a href="laptops.html" class="footer-link">Laptops</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Connect With Us</h5>
+                    <p>Follow us on social media for updates and exclusive offers</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WESHOP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js-phoun/cart.js"></script>
+    <script src="../js-phoun/watch.js"></script>
+
+
+
+</body>
+
+</html>
