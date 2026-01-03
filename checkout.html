@@ -9,14 +9,26 @@
     rel="stylesheet"
 />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/15.16.0/simpleicons.svg">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
     <a href="dashboard.html"><i class="ri-arrow-left-long-line"></i> Back home</a>
-    <div class="container">
-        <!-- // code goes here -->
-         
-
-
+    <div class="container" id="checkout">
+        <h1>Checkout</h1>
+        <div class="checkout-container">
+            <div class="cart-items">
+                <h2>Your Cart</h2>
+                <div id="cart-items-container"></div>
+            </div>
+            <div class="checkout-summary">
+                <h2>Summary</h2>
+                <div id="summary-container">
+                    <p>Total: <span id="total-price">$0.00</span></p>
+                    <button id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="js/checkout.js"></script>
 </body>
 </html>
