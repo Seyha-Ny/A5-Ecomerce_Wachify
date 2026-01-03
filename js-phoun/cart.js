@@ -57,7 +57,7 @@ function addToCart(productId, name, price, image) {
 function updateCartCount() {
     try {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalItems = cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
         const cartCountElement = document.getElementById('cartCount');
         if (cartCountElement) {
             cartCountElement.textContent = totalItems;

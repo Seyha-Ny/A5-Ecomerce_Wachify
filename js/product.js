@@ -27,8 +27,14 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function updateCartCount() {
     const cartCount = document.getElementById("cartCount");
     if (!cartCount) return;
-
-    const total = cart.reduce((sum, item) => sum + item.qty, 0);
+    const total = cart.reduce((sum, item) => {
+        const quantity = typeof item.quantity === "number"
+            ? item.quantity
+            : typeof item.qty === "number"
+                ? item.qty
+                : 0;
+        return sum + quantity;
+    }, 0);
     cartCount.textContent = total;
 }
 
@@ -40,13 +46,21 @@ document.querySelectorAll(".cart-btn").forEach(btn => {
             name: btn.dataset.name,
             price: Number(btn.dataset.price),
             image: btn.dataset.image,
-            qty: 1
+            quantity: 1
         };
 
         const exist = cart.find(item => item.id === product.id);
 
         if (exist) {
-            exist.qty++;
+            const currentQty = typeof exist.quantity === "number"
+                ? exist.quantity
+                : typeof exist.qty === "number"
+                    ? exist.qty
+                    : 0;
+            exist.quantity = currentQty + 1;
+            if (Object.prototype.hasOwnProperty.call(exist, "qty")) {
+                delete exist.qty;
+            }
         } else {
             cart.push(product);
         }
