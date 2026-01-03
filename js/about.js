@@ -1,16 +1,16 @@
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Update cart badge
 function updateCartCount() {
-    const cartCount = document.getElementById("cartCount");
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = document.getElementById('cartCount');
     if (!cartCount) return;
 
-    const quantity = typeof item.quantity === "number"
-        ? item.quantity
-        : typeof item.qty === "number"
-            ? item.qty
-            : 0;
+    const total = cart.reduce((sum, item) => {
+        const quantity = typeof item.quantity === 'number' ? item.quantity : (typeof item.qty === 'number' ? item.qty : 0);
+        return sum + quantity;
+    }, 0);
+
     cartCount.textContent = total;
 }
 
