@@ -6,7 +6,11 @@ function updateCartCount() {
     const cartCount = document.getElementById("cartCount");
     if (!cartCount) return;
 
-    const total = cart.reduce((sum, item) => sum + item.qty, 0);
+    const quantity = typeof item.quantity === "number"
+        ? item.quantity
+        : typeof item.qty === "number"
+            ? item.qty
+            : 0;
     cartCount.textContent = total;
 }
 
@@ -32,7 +36,7 @@ document.querySelectorAll(".cart-btn").forEach(btn => {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
 
-       
+
     });
 });
 
