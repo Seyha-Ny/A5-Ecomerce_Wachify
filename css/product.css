@@ -224,7 +224,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 50px;
-   
+
 }
 
 .buy-form p {
@@ -237,7 +237,7 @@
     background: #ffffff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     max-width: 700px;
     margin: 40px auto;
 }
@@ -287,7 +287,7 @@
 
 .buy-product-form input:focus {
     border-color: #74ebd5;
-    box-shadow: 0 0 5px rgba(116,235,213,0.5);
+    box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
 }
 
 .buy-product-form button {
@@ -361,7 +361,8 @@
 @media (max-width: 768px) {
 
     /* Prevent horizontal scroll */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 

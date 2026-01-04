@@ -14,46 +14,46 @@ function updateCartCount() {
 // Call it on initial page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
 
-  function checkUserSession() {
-            const storedUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
-            const accountNameSpan = document.getElementById('accountName');
-            const loginBtn = document.getElementById('loginBtn');
-            const logoutBtn = document.getElementById('logoutBtn');
-            const divider = document.getElementById('divider');
+function checkUserSession() {
+    const storedUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+    const accountNameSpan = document.getElementById('accountName');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const divider = document.getElementById('divider');
 
-            if (storedUser) {
-                try {
-                    const user = JSON.parse(storedUser);
-                    accountNameSpan.textContent = user.name || user.username || 'Account';
-                    loginBtn.style.display = 'none';
-                    logoutBtn.style.display = 'block';
-                    divider.style.display = 'block';
-                } catch (error) {
-                    clearUserSession();
-                }
-            } else {
-                accountNameSpan.textContent = 'Account';
-                loginBtn.style.display = 'block';
-                logoutBtn.style.display = 'none';
-                divider.style.display = 'none';
-            }
-        }
-
-        function clearUserSession() {
-            localStorage.removeItem('currentUser');
-            localStorage.removeItem('rememberedUser');
-            sessionStorage.removeItem('currentUser');
-        }
-
-        // Handle logout
-        document.getElementById('logoutBtn').addEventListener('click', (e) => {
-            e.preventDefault();
+    if (storedUser) {
+        try {
+            const user = JSON.parse(storedUser);
+            accountNameSpan.textContent = user.name || user.username || 'Account';
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'block';
+            divider.style.display = 'block';
+        } catch (error) {
             clearUserSession();
-            window.location.href = 'index.html';
-        });
+        }
+    } else {
+        accountNameSpan.textContent = 'Account';
+        loginBtn.style.display = 'block';
+        logoutBtn.style.display = 'none';
+        divider.style.display = 'none';
+    }
+}
 
-        // Check session on page load
-        document.addEventListener('DOMContentLoaded', checkUserSession);
+function clearUserSession() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('rememberedUser');
+    sessionStorage.removeItem('currentUser');
+}
 
-        // Listen for storage changes (logout in other tabs)
-        window.addEventListener('storage', checkUserSession);
+// Handle logout
+document.getElementById('logoutBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    clearUserSession();
+    window.location.href = 'index.html';
+});
+
+// Check session on page load
+document.addEventListener('DOMContentLoaded', checkUserSession);
+
+// Listen for storage changes (logout in other tabs)
+window.addEventListener('storage', checkUserSession);
