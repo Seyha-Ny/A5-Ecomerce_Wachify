@@ -54,15 +54,29 @@ function addToCart(productId, name, price, image) {
     }
 }
 
+
+/**
+ * Adds a product to the cart.
+ *
+ * @param {string} productId - The ID of the product.
+ * @param {string} name - The name of the product.
+ * @param {number} price - The price of the product.
+ * @param {string} image - The URL of the product's image.
+ */
+
 function updateCartCount() {
     try {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        // 1. Get cart data from localStorage
         const totalItems = cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
+        // 2. Get cart count element
         const cartCountElement = document.getElementById('cartCount');
+        // 3. Update cart count element
         if (cartCountElement) {
             cartCountElement.textContent = totalItems;
         }
     } catch (e) {
+         // 4. Error handling
         console.error('Error updating cart count:', e);
     }
 }
